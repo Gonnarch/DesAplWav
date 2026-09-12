@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+<p class="eyebrow">TU COLECCIÓN</p><h1>Biblioteca de videojuegos</h1><p class="lead">Guarda tus favoritos y encuentra tu próxima aventura. Agrega un juego con sus cinco datos.</p>
+<section class="card-panel"><h2>Agregar videojuego</h2>
+<% if (error) { %><p role="alert" class="red-text text-darken-4"><%= error %></p><% } %>
+<form action="/games" method="POST"><div class="row">
+<% const labels = { nombre: 'Nombre', genero: 'Género', plataforma: 'Plataforma', desarrollador: 'Desarrollador', anio: 'Año de lanzamiento' }; Object.entries(labels).forEach(([field, label]) => { %>
+<div class="input-field col s12 m6"><input id="<%= field %>" name="<%= field %>" type="<%= field === 'anio' ? 'number' : 'text' %>" <% if (field === 'anio') { %> min="1950" max="<%= new Date().getFullYear() + 5 %>" step="1" <% } %> maxlength="120" required value="<%= values[field] || '' %>"><label class="active" for="<%= field %>"><%= label %></label></div>
+<% }) %></div><button class="btn indigo" type="submit">Guardar videojuego</button></form></section>
+<section class="card-panel"><h2>Videojuegos registrados <span class="new badge indigo" data-badge-caption="registros"><%= games.length %></span></h2>
+<% if (!games.length) { %><p>Aún no hay videojuegos. Completa el formulario para agregar el primero.</p><% } else { %>
+<div class="table-scroll"><table class="striped"><thead><tr><th scope="col">Nombre</th><th scope="col">Género</th><th scope="col">Plataforma</th><th scope="col">Desarrollador</th><th scope="col">Año</th></tr></thead><tbody><% games.forEach(g => { %><tr><td><%= g.nombre %></td><td><%= g.genero %></td><td><%= g.plataforma %></td><td><%= g.desarrollador %></td><td><%= g.anio %></td></tr><% }) %></tbody></table></div><% } %></section>
+<%- include('partials/footer') %>
