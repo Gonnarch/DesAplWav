@@ -43,28 +43,28 @@ Interfaz inspirada en la tienda de Steam (https://store.steampowered.com/): pale
 ## Capturas del resultado en el navegador
 
 ### Inicio
-![Inicio](docs/capturas/01-inicio.png)
+![Inicio](docs/capturas/01-inicio-steam.png)
 
 ### Acerca de
-![Acerca de](docs/capturas/02-acerca-de.png)
+![Acerca de](docs/capturas/02-acerca-de-steam.png)
 
 ### Contacto
-![Contacto](docs/capturas/03-contacto.png)
+![Contacto](docs/capturas/03-contacto-steam.png)
 
 ### Mensajes recibidos
-![Admin](docs/capturas/04-admin.png)
+![Admin](docs/capturas/04-admin-steam.png)
 
 ### Formulario y tabla de videojuegos
-![Videojuegos](docs/capturas/05-videojuegos.png)
+![Videojuegos](docs/capturas/05-videojuegos-steam.png)
 
 ### Página 404
-![Error 404](docs/capturas/06-error-404.png)
+![Error 404](docs/capturas/06-error-404-steam.png)
 
 ### Vista móvil
-![Vista móvil](docs/capturas/07-movil.png)
+![Vista móvil](docs/capturas/07-movil-steam.png)
 
 ### Inicio en móvil
-![Inicio en móvil](docs/capturas/08-inicio-movil.png)
+![Inicio en móvil](docs/capturas/08-inicio-movil-steam.png)
 
 ## Cinco observaciones
 
