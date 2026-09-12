@@ -36,6 +36,10 @@ npm test
 
 La prueba comprueba las cinco páginas, el envío de contactos, la redirección, el registro y listado de videojuegos, el rechazo de datos inválidos, la salida segura del texto recibido y el estado HTTP 404. También se verificaron los formularios desde el navegador.
 
+## Diseño visual
+
+Interfaz inspirada en la tienda de Steam (https://store.steampowered.com/): paleta oscura, acentos azules, bloque destacado y tarjetas de acceso. Se mantiene Materialize CSS local. La ilustración espacial está construida con CSS.
+
 ## Capturas del resultado en el navegador
 
 ### Inicio
@@ -58,6 +62,9 @@ La prueba comprueba las cinco páginas, el envío de contactos, la redirección,
 
 ### Vista móvil
 ![Vista móvil](docs/capturas/07-movil.png)
+
+### Inicio en móvil
+![Inicio en móvil](docs/capturas/08-inicio-movil.png)
 
 ## Cinco observaciones
 
