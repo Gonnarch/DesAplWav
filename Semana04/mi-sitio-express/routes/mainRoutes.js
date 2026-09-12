@@ -9,4 +9,3 @@ const games = require('../controllers/gameController');
 router.get('/games', games.index);
 router.post('/games', games.create);
 module.exports = router;
-
