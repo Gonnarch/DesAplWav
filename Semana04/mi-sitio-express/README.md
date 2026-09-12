@@ -24,7 +24,7 @@ Abrir http://localhost:3000. Materialize CSS 1.0.0 está incluido en public/vend
 - GET /games: formulario y tabla de videojuegos, mediante un controlador independiente.
 - POST /games: registra nombre, género, plataforma, desarrollador y año de lanzamiento.
 - Cualquier ruta inexistente devuelve HTTP 404 y una vista con la dirección solicitada y un enlace al inicio.
-- Estilos Materialize CSS y adaptación a pantallas pequeñas.
+- Estilos Materialize CSS en las vistas.
 
 Los mensajes y videojuegos se guardan en arreglos; se pierden al reiniciar el servidor. Los datos que aparecen en las capturas son ejemplos ingresados durante la verificación. Admin es una vista del laboratorio sin autenticación.
 
@@ -59,12 +59,6 @@ Interfaz inspirada en la tienda de Steam (https://store.steampowered.com/): pale
 
 ### Página 404
 ![Error 404](docs/capturas/06-error-404-steam.png)
-
-### Vista móvil
-![Vista móvil](docs/capturas/07-movil-steam.png)
-
-### Inicio en móvil
-![Inicio en móvil](docs/capturas/08-inicio-movil-steam.png)
 
 ## Cinco observaciones
 
