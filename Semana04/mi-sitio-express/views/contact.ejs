@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+<p class="eyebrow">HABLEMOS</p><h1>Formulario de contacto</h1><p class="lead">Comparte una idea, una recomendación o una consulta.</p>
+<div class="card-panel form-panel">
+<% if (error) { %><p role="alert" class="red-text text-darken-4"><%= error %></p><% } %>
+<form action="/contact" method="POST">
+<div class="input-field"><input id="nombre" name="nombre" required maxlength="100" value="<%= values.nombre || '' %>"><label class="active" for="nombre">Nombre</label></div>
+<div class="input-field"><input id="email" name="email" type="email" required maxlength="254" value="<%= values.email || '' %>"><label class="active" for="email">Correo electrónico</label></div>
+<div class="input-field"><textarea id="mensaje" name="mensaje" class="materialize-textarea" required maxlength="2000"><%= values.mensaje || '' %></textarea><label class="active" for="mensaje">Mensaje</label></div>
+<button class="btn indigo" type="submit">Enviar mensaje</button> <a class="btn-flat" href="/">Volver</a>
+</form></div>
+<%- include('partials/footer') %>

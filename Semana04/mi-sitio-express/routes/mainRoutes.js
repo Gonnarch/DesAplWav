@@ -1,9 +1,8 @@
-const express = require("express");
-const router = express.Router();
-const mainController = require("../controllers/mainController");
-
-// Definir rutas y asociarlas con controladores
-router.get("/", mainController.home);
-router.get("/about", mainController.about);
-
+const router = require('express').Router();
+const main = require('../controllers/mainController');
+router.get('/', main.home);
+router.get('/about', main.about);
+router.get('/contact', main.contact);
+router.post('/contact', main.saveContact);
+router.get('/admin', main.admin);
 module.exports = router;

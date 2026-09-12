@@ -1,0 +1,4 @@
+<%- include('partials/header') %>
+<p class="eyebrow">COMUNIDAD</p><h1>Mensajes recibidos</h1><a class="btn indigo" href="/contact">Ir al formulario</a>
+<% if (!messages.length) { %><div class="card-panel"><h2>Aún no hay mensajes</h2><p>Envía el primero desde Contacto.</p></div><% } else { %><ul class="collection"><% messages.forEach(m => { %><li class="collection-item"><h2><%= m.nombre %></h2><p><%= m.email %></p><p class="message"><%= m.mensaje %></p></li><% }) %></ul><% } %>
+<%- include('partials/footer') %>

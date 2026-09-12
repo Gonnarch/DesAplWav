@@ -1,18 +1,14 @@
-const express = require("express");
+const express = require('express');
+const path = require('path');
 const app = express();
-const path = require("path");
-
-// Configurar el motor de vistas
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
-
-// Servir archivos estáticos desde "public"
-app.use(express.static(path.join(__dirname, "public")));
-
-// Importar rutas
-const mainRoutes = require("./routes/mainRoutes");
-app.use("/", mainRoutes);
-
-// Iniciar el servidor
-const PORT = 3000;
-app.listen(PORT, () => console.log(`Servidor en http://localhost:${PORT}`));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+app.use('/', require('./routes/mainRoutes'));
+app.use((req, res) => res.status(404).render('notFound', { title: 'Página no encontrada', url: req.originalUrl }));
+if (require.main === module) {
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => console.log(`Servidor en http://localhost:${port}`));
+}
+module.exports = app;

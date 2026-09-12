@@ -1,16 +1,24 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f4f4f4;
-}
-
-h1 {
-  color: #333;
-}
-
-a {
-  display: block;
-  margin-top: 20px;
-  text-decoration: none;
-  color: blue;
-}
+:root { color-scheme: light; }
+body { margin:0; background:#f5f6fb; color:#202641; font-family:Arial,sans-serif; }
+.container { width:88%; max-width:1120px; }
+nav { height:auto; min-height:72px; }
+.navigation { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+.brand-name { font-size:24px; font-weight:800; white-space:nowrap; }
+.brand-name span { font-size:12px; font-weight:400; opacity:.8; }
+.nav-links { display:flex; flex-wrap:wrap; gap:20px; }
+.nav-links a { font-size:14px; }
+main { min-height:75vh; padding-top:40px; }
+h1 { font-size:clamp(32px,5vw,58px); font-weight:800; line-height:1.12; letter-spacing:-1.5px; }
+h2 { font-size:23px; font-weight:700; }
+p { line-height:1.7; }
+.eyebrow { color:#4655a0; font-size:12px; font-weight:800; letter-spacing:2px; }
+.hero { padding:28px 0 44px; }
+.lead { font-size:18px; max-width:680px; color:#58617b; margin-bottom:28px; }
+.card-panel { border-radius:12px; box-shadow:0 3px 16px #2026410b; padding:28px; }
+.form-panel { max-width:760px; }
+.input-field { margin-top:28px; }
+footer { color:#626a80; padding-top:30px; padding-bottom:24px; font-size:12px; }
+.message { white-space:pre-wrap; overflow-wrap:anywhere; }
+.table-scroll { overflow-x:auto; }
+.btn, .btn-large { border-radius:6px; }
+@media(max-width:600px) { .navigation { padding:12px 0; line-height:32px; } .nav-links { gap:14px; } main { padding-top:24px; } .card-panel { padding:20px; } }
