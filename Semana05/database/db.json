@@ -1,0 +1,274 @@
+{
+  "tickets": [
+    {
+      "id": "951f6012-181d-4e86-95f3-1524cdd6282d",
+      "title": "Prueba de correo",
+      "description": "Probando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": "Carlos"
+    },
+    {
+      "id": "137fcdd1-a3b6-4184-831b-8baaf632ed98",
+      "title": "Nueva Prueba de correo",
+      "description": "Probando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "01b5f7a4-bb83-4fd9-9090-81bc1b748eff",
+      "title": "Nueva Prueba de correo institucional",
+      "description": "Probando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "ff9ef12c-01dd-4ce3-b98f-2a09b6943a55",
+      "title": "Nueva Prueba de correo institucional",
+      "description": "Probando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "623cf0ae-8b65-41c9-89b2-3ce41c6e3e18",
+      "title": "Nueva Prueba de correo institucional",
+      "description": "Probando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "a026507d-83f5-410f-9c20-a05ffd42b9e5",
+      "title": "Nueva Prueba de correo institucional",
+      "description": "Probando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "24de6f66-6188-4849-968f-a3061b7c83c2",
+      "title": "Nueva Prueba de correo institucional",
+      "description": "Probando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "53d1c114-708b-4b65-a317-235a543d0274",
+      "title": "Nueva Prueba de correo institucional",
+      "description": "Probando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "012780b8-cc71-4468-b353-d66490a4b89c",
+      "title": "Nueva Prueba de correo institucional",
+      "description": "Probando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "627490a2-477a-44b7-9443-2971db74411f",
+      "title": "Prueba correo",
+      "description": "Prueba final de Nodemailer",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "4bb570ed-b2d9-4158-b9c5-a7511cce0028",
+      "title": "Prueba correo",
+      "description": "Prueba final de Nodemailer",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "5b0f9ce1-10a1-41f0-9fb2-0aacc9162826",
+      "title": "Prueba correo",
+      "description": "Buenos dias profesor, prueva de correo exitosa.",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "b2babce3-9d9a-4519-9b4d-75c0027c93fa",
+      "title": "Prueba correo",
+      "description": "Buenos dias profesor, prueva de correo exitosa.",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "fbac59f7-f604-4cb5-8e8e-79ec331bb99e",
+      "title": "Prueba correo",
+      "description": "Buenos dias profesor, prueva de correo exitosa.",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "3b398c90-2e5a-4179-a813-78cd910c27bb",
+      "title": "Prueba correo",
+      "description": "Buenos dias profesor, prueva de correo exitosa.",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "7cc43625-93b6-495b-9b87-3788ee7211bc",
+      "title": "Prueba correo",
+      "description": "Buenos dias profesor, prueva de correo exitosa.",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    }
+  ],
+  "notifications": [
+    {
+      "id": "43b578b9-e48a-4931-a406-ba9339492d7a",
+      "type": "email",
+      "message": "Nuevo ticket creado: Problema 1",
+      "status": "pending",
+      "ticketId": "ecf06bd6-53f4-4ee2-b93e-02f47ff6016b"
+    },
+    {
+      "id": "94f08db2-d92b-4fae-af6e-f9cc86c1185b",
+      "type": "email",
+      "message": "El ticket ecf06bd6-53f4-4ee2-b93e-02f47ff6016b fue asignado a carlos",
+      "status": "pending",
+      "ticketId": "ecf06bd6-53f4-4ee2-b93e-02f47ff6016b"
+    },
+    {
+      "id": "13080c6a-f95a-4302-a3bf-b56a3028fce8",
+      "type": "push",
+      "message": "El ticket ecf06bd6-53f4-4ee2-b93e-02f47ff6016b cambió a asignado",
+      "status": "pending",
+      "ticketId": "ecf06bd6-53f4-4ee2-b93e-02f47ff6016b"
+    },
+    {
+      "id": "aae35ff3-b0a3-4795-b401-316909b1c3f1",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba de correo",
+      "status": "pending",
+      "ticketId": "951f6012-181d-4e86-95f3-1524cdd6282d"
+    },
+    {
+      "id": "6e335405-5274-421b-90f9-f6825808ffe1",
+      "type": "email",
+      "message": "Nuevo ticket creado: Nueva Prueba de correo",
+      "status": "pending",
+      "ticketId": "137fcdd1-a3b6-4184-831b-8baaf632ed98"
+    },
+    {
+      "id": "13c48715-8623-44c7-b9a7-4ec1fb3a7746",
+      "type": "email",
+      "message": "Nuevo ticket creado: Nueva Prueba de correo institucional",
+      "status": "pending",
+      "ticketId": "01b5f7a4-bb83-4fd9-9090-81bc1b748eff"
+    },
+    {
+      "id": "36449b9d-0b53-45ea-91f6-2082c4f370e6",
+      "type": "email",
+      "message": "Nuevo ticket creado: Nueva Prueba de correo institucional",
+      "status": "pending",
+      "ticketId": "ff9ef12c-01dd-4ce3-b98f-2a09b6943a55"
+    },
+    {
+      "id": "5e54498e-9c65-4730-b8d4-5041573c1adb",
+      "type": "email",
+      "message": "Nuevo ticket creado: Nueva Prueba de correo institucional",
+      "status": "pending",
+      "ticketId": "623cf0ae-8b65-41c9-89b2-3ce41c6e3e18"
+    },
+    {
+      "id": "5502c6ba-353b-4596-85c0-06d027822e6e",
+      "type": "email",
+      "message": "Nuevo ticket creado: Nueva Prueba de correo institucional",
+      "status": "pending",
+      "ticketId": "a026507d-83f5-410f-9c20-a05ffd42b9e5"
+    },
+    {
+      "id": "28352145-40ba-42c1-8476-4c4330088687",
+      "type": "email",
+      "message": "Nuevo ticket creado: Nueva Prueba de correo institucional",
+      "status": "pending",
+      "ticketId": "24de6f66-6188-4849-968f-a3061b7c83c2"
+    },
+    {
+      "id": "168acc8f-5d29-4404-8895-02c17e941f74",
+      "type": "email",
+      "message": "Nuevo ticket creado: Nueva Prueba de correo institucional",
+      "status": "pending",
+      "ticketId": "53d1c114-708b-4b65-a317-235a543d0274"
+    },
+    {
+      "id": "6aad5601-bb8c-452d-bf0c-a48a334d1303",
+      "type": "email",
+      "message": "Nuevo ticket creado: Nueva Prueba de correo institucional",
+      "status": "pending",
+      "ticketId": "012780b8-cc71-4468-b353-d66490a4b89c"
+    },
+    {
+      "id": "92360700-b2f6-40e7-a9bf-07f5bc572d85",
+      "type": "email",
+      "message": "El ticket 951f6012-181d-4e86-95f3-1524cdd6282d fue asignado a Carlos",
+      "status": "pending",
+      "ticketId": "951f6012-181d-4e86-95f3-1524cdd6282d"
+    },
+    {
+      "id": "bf5a5472-3f6c-424f-9a45-4fbcb1a08f34",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba correo",
+      "status": "pending",
+      "ticketId": "627490a2-477a-44b7-9443-2971db74411f"
+    },
+    {
+      "id": "4fb2d85f-4799-47f2-bdce-bb4df2318787",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba correo",
+      "status": "pending",
+      "ticketId": "4bb570ed-b2d9-4158-b9c5-a7511cce0028"
+    },
+    {
+      "id": "78eaa83f-9d0a-4b67-80d6-53a93ee7120e",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba correo",
+      "status": "pending",
+      "ticketId": "5b0f9ce1-10a1-41f0-9fb2-0aacc9162826"
+    },
+    {
+      "id": "f30827b3-0f46-49d7-b0bf-9847a3d2a263",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba correo",
+      "status": "pending",
+      "ticketId": "b2babce3-9d9a-4519-9b4d-75c0027c93fa"
+    },
+    {
+      "id": "0fcce544-3959-4de2-8cfb-c1ef71a7b202",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba correo",
+      "status": "pending",
+      "ticketId": "fbac59f7-f604-4cb5-8e8e-79ec331bb99e"
+    },
+    {
+      "id": "b04c2d67-d166-4706-b761-03d99b6633b8",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba correo",
+      "status": "pending",
+      "ticketId": "3b398c90-2e5a-4179-a813-78cd910c27bb"
+    },
+    {
+      "id": "0ae53b59-e7cd-4480-8d50-f7e7b1cd5078",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba correo",
+      "status": "pending",
+      "ticketId": "7cc43625-93b6-495b-9b87-3788ee7211bc"
+    }
+  ]
+}
