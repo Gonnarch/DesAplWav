@@ -1,28 +1,58 @@
-# Semana 06 — Introducción a bases de datos NoSQL
+# Semana 06
 
-Desarrollo de Aplicaciones Web Avanzado. Implementación de la guía **GLAB-S06-EAREVALO-2026-1**, organizada en el orden solicitado: primero el laboratorio y al final la tarea.
+Aplicación Social Media con Node.js, Express, EJS y MongoDB.
 
-| Orden | Entrega | Contenido |
-| --- | --- | --- |
-| 1 | [Laboratorio](01-laboratorio/README.md) | Configuración, conexión a MongoDB, modelos básicos, repositorios, ejercicio de consola e integración con Express y EJS |
-| 2 | [Tarea](02-tarea/README.md) | Modelos ampliados, validaciones, formularios y CRUD completo de publicaciones, evidencias y cinco conclusiones |
+El proyecto se encuentra en [laboratorio06](laboratorio06/).
 
-Cada etapa incluye su propio proyecto `mongo-node`, instrucciones de ejecución y capturas. Ejecutarlas en ese orden; detener la primera antes de iniciar la segunda con el mismo puerto. No se incluyen `node_modules` ni credenciales. La configuración local está documentada en `.env.example`.
+## Ejecución
 
-## Correspondencia con la guía
+Requisitos: Node.js 20 o posterior y MongoDB en ejecución.
 
-- Configuración, dependencias y variables: `mongo-node/package.json`, `package-lock.json`, `.env.example`.
-- Conexión: `src/db/database.js`.
-- Modelos: `src/models/User.js` y `Post.js`.
-- Persistencia: `src/repositories/`.
-- Ejercicio de datos: `scripts/seed.js`, `scripts/demo-console.js`.
-- Aplicación web: `src/services/`, `src/controllers/`, `src/routes/`, `src/views/`, `app.js`.
-- Ampliación de esquemas y CRUD: `02-tarea/mongo-node/`.
-- Capturas de la web y consultas MongoDB: `evidencias/` dentro de cada etapa.
-- Conclusiones y enlace del repositorio: al final de [02-tarea/README.md](02-tarea/README.md).
+Desde la carpeta Semana06:
 
-## Entorno de las evidencias
+```powershell
+cd laboratorio06
+npm ci
+Copy-Item .env.example .env
+npm run seed
+npm run dev
+```
 
-Las comprobaciones se ejecutaron con bases MongoDB reales y aisladas para laboratorio y tarea. Se usaron temporalmente los puertos MongoDB 27018/27019 y web 3001/3002 para mantener ambas etapas disponibles durante la captura. Los dos proyectos se entregan con los valores locales de la guía: base `socialmedia`, MongoDB 27017 y web 3001. Las instancias de verificación no forman parte de las dependencias del proyecto.
+Abrir http://localhost:3001/posts.
 
-Repositorio: [Gonnarch/DesAplWav](https://github.com/Gonnarch/DesAplWav).
+La configuración predeterminada usa `mongodb://127.0.0.1:27017/socialmedia`. Si MongoDB está en otra dirección, cambiar `MONGO_URI` en `.env`.
+
+## Funciones
+
+- Listar publicaciones con sus autores.
+- Crear, editar y eliminar publicaciones desde formularios web.
+- Registrar hashtags e imagen opcional.
+- Validar edad, contraseña, título y contenido mediante Mongoose.
+- Guardar las fechas de creación y actualización.
+
+## Estructura
+
+- `src/db`: conexión a MongoDB.
+- `src/models`: esquemas de usuarios y publicaciones.
+- `src/repositories`: consultas a la base de datos.
+- `src/services`: reglas y validación de autores.
+- `src/controllers` y `src/routes`: gestión de solicitudes.
+- `src/views` y `src/public`: vistas EJS y estilos.
+- `scripts`: datos de ejemplo y consultas de consola.
+- `test`: validación de modelos y pruebas del CRUD.
+
+## Pruebas
+
+```powershell
+npm test
+```
+
+Para incluir la prueba de integración con MongoDB:
+
+```powershell
+$env:TEST_MONGO_URI = 'mongodb://127.0.0.1:27017'
+npm test
+Remove-Item Env:TEST_MONGO_URI
+```
+
+La integración crea y elimina una base exclusiva de prueba; no utiliza la base `socialmedia`.

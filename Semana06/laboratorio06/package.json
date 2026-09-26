@@ -1,14 +1,15 @@
 {
-  "name": "mongo-node",
+  "name": "laboratorio06",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Semana 06: laboratorio de Node.js y MongoDB",
+  "description": "Semana 06: validaciones y CRUD de publicaciones",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
     "seed": "node scripts/seed.js",
-    "demo:console": "node scripts/demo-console.js"
+    "demo:console": "node scripts/demo-console.js",
+    "test": "node --test"
   },
   "engines": {
     "node": ">=20"
