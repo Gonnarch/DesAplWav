@@ -1,0 +1,67 @@
+$ mongosh "mongodb://127.0.0.1:27019/socialmedia"
+
+socialmedia> show dbs
+admin         40.00 KiB
+config        12.00 KiB
+local         40.00 KiB
+socialmedia  116.00 KiB
+
+socialmedia> db.users.find({}, {password: 0}).pretty()
+[
+  {
+    _id: ObjectId('6ab7cc0be12df0b26e8addca'),
+    name: 'William',
+    lastName: 'Arévalo',
+    email: 'william@example.com',
+    age: 25,
+    phoneNumber: '900000001',
+    createdAt: ISODate('2026-09-26T13:43:39.752Z'),
+    __v: 0
+  },
+  {
+    _id: ObjectId('6ab7cc0be12df0b26e8addce'),
+    name: 'Ana',
+    lastName: 'Torres',
+    email: 'ana@example.com',
+    age: 22,
+    phoneNumber: '900000002',
+    createdAt: ISODate('2026-09-26T13:43:39.933Z'),
+    __v: 0
+  }
+]
+
+
+socialmedia> db.posts.find().pretty()
+[
+  {
+    _id: ObjectId('6ab7cc0ce12df0b26e8addd1'),
+    title: 'Hello',
+    content: 'Hi, this is my first post!',
+    user: ObjectId('6ab7cc0be12df0b26e8addca'),
+    hashtags: [ 'nodejs', 'mongodb', 'semana06' ],
+    imageUrl: '',
+    createdAt: ISODate('2026-09-26T13:43:40.351Z'),
+    __v: 0
+  },
+  {
+    _id: ObjectId('6ab7cc0ce12df0b26e8addd4'),
+    title: 'Aprendiendo MongoDB',
+    content: 'Modelos, repositorios y servicios conectados a una base de datos documental.',
+    user: ObjectId('6ab7cc0be12df0b26e8addce'),
+    hashtags: [ 'mongoose', 'tecsup' ],
+    imageUrl: '',
+    createdAt: ISODate('2026-09-26T13:43:40.363Z'),
+    __v: 0
+  },
+  {
+    _id: ObjectId('6ab7cc6dd760415e56ebfcee'),
+    title: 'MongoDB: edición completa',
+    content: 'Publicación actualizada desde la web. Los cambios de contenido y etiquetas quedan guardados en MongoDB.',
+    user: ObjectId('6ab7cc0be12df0b26e8addce'),
+    hashtags: [ 'mongodb', 'crud', 'editado' ],
+    imageUrl: '',
+    createdAt: ISODate('2026-09-26T13:45:17.527Z'),
+    __v: 0,
+    updatedAt: ISODate('2026-09-26T13:45:18.403Z')
+  }
+]

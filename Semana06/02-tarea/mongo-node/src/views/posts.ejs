@@ -1,0 +1,11 @@
+<%- include('partials/head', { title: 'Publicaciones' }) %>
+<div class="page-heading"><div><h1>Publicaciones</h1><p class="lead">Ideas de nuestra comunidad · <%= posts.length %> publicaciones</p></div><a class="btn teal darken-2" href="/posts/new">+ Nueva publicación</a></div>
+<% if (!posts.length) { %><section class="empty"><h5>Aún no hay publicaciones</h5><p>Crea la primera publicación. Si no hay autores, ejecuta npm run seed.</p></section><% } %>
+<div class="post-grid"><% posts.forEach(post => { %>
+<article class="card post-card">
+<% if (post.imageUrl) { %><img class="post-image" src="<%= post.imageUrl %>" alt="Imagen de <%= post.title %>" loading="lazy"><% } else { %><div class="post-cover"><span>SOCIAL / IDEAS</span><strong>Comparte lo<br>que aprendes.</strong></div><% } %>
+<div class="card-content"><h2 class="card-title"><%= post.title %></h2><p class="post-content"><%= post.content %></p>
+<div class="tags"><% post.hashtags.forEach(tag => { %><span class="chip">#<%= tag %></span><% }) %></div>
+</div><div class="card-action"><p class="author"><%= post.user ? post.user.name + ' ' + post.user.lastName : 'Autor no disponible' %></p>
+<p class="date">Creado: <%= post.createdAt.toLocaleString('es-PE', { timeZone: 'America/Lima' }) %></p><% if (post.updatedAt) { %><p class="date">Editado: <%= post.updatedAt.toLocaleString('es-PE', { timeZone: 'America/Lima' }) %></p><% } %><div class="actions"><a href="/posts/<%= post._id %>/edit" class="edit-link">Editar</a><form method="post" action="/posts/<%= post._id %>/delete" data-confirm="¿Eliminar esta publicación? Esta acción no se puede deshacer."><button class="delete-btn" type="submit">Eliminar</button></form></div>
+</div></article><% }) %></div><%- include('partials/footer') %>

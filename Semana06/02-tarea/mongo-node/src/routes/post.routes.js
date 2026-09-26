@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import controller from '../controllers/postController.js';
+const router = Router();
+router.get('/', controller.getAll);
+router.get('/new', controller.newForm);
+router.post('/', controller.create);
+router.get('/:id/edit', controller.editForm);
+router.post('/:id/update', controller.update);
+router.post('/:id/delete', controller.delete);
+export default router;

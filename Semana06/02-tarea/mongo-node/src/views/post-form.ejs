@@ -1,0 +1,12 @@
+<%- include('partials/head', { title: editing ? 'Editar publicación' : 'Nueva publicación' }) %>
+<a class="back" href="/posts">← Volver a publicaciones</a><h1><%= editing ? 'Editar publicación' : 'Nueva publicación' %></h1><p class="lead">Una idea puede iniciar una conversación.</p>
+<% if (error) { %><div class="form-error" role="alert"><strong>No se pudo guardar.</strong><p><%= error %></p></div><% } %>
+<% if (!users.length) { %><p role="alert">No hay autores registrados. Ejecuta npm run seed antes de crear publicaciones.</p><% } %>
+<form class="editor" method="post" action="<%= editing ? '/posts/' + post._id + '/update' : '/posts' %>">
+<label for="userId">Autor *</label><select class="browser-default" id="userId" name="userId" required><option value="">Selecciona un autor</option><% users.forEach(user => { %><option value="<%= user._id %>" <%= String(post.user?._id || post.user || '') === String(user._id) ? 'selected' : '' %>><%= user.name %> <%= user.lastName %></option><% }) %></select>
+<label for="title">Título *</label><input id="title" name="title" minlength="5" maxlength="30" required value="<%= post.title || '' %>" aria-describedby="title-help"><small id="title-help">Entre 5 y 30 caracteres.</small>
+<label for="content">Contenido *</label><textarea id="content" name="content" minlength="10" required aria-describedby="content-help"><%= post.content || '' %></textarea><small id="content-help">Al menos 10 caracteres.</small>
+<label for="hashtags">Hashtags</label><input id="hashtags" name="hashtags" value="<%= Array.isArray(post.hashtags) ? post.hashtags.join(', ') : post.hashtags || '' %>" placeholder="nodejs, mongodb, aprendizaje"><small>Separa las etiquetas con comas o espacios.</small>
+<label for="imageUrl">URL de la imagen</label><input id="imageUrl" name="imageUrl" type="url" pattern="https?://.*" value="<%= post.imageUrl || '' %>" placeholder="https://ejemplo.com/imagen.jpg"><small>Opcional. URL pública que comience con http:// o https://.</small>
+<div class="form-actions"><button class="btn teal darken-2" type="submit" <%= !users.length ? 'disabled' : '' %>><%= editing ? 'Guardar cambios' : 'Publicar' %></button><a class="secondary" href="/posts">Cancelar</a></div></form>
+<%- include('partials/footer') %>

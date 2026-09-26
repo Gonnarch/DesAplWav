@@ -1,0 +1,2 @@
+socialmedia> db.posts.countDocuments({title: 'MongoDB: edición completa'})
+0

@@ -1,0 +1,22 @@
+Ejecución real sobre MongoDB 8.0.15
+Comando: TEST_MONGO_URI=mongodb://127.0.0.1:27019 node --test --test-reporter=spec
+Entorno: Node.js v24.15.0, Windows
+
+Publicación no encontrada
+Publicación no encontrada
+Identificador inválido
+✔ CRUD HTTP con persistencia real, relaciones y validación en edición (678.5134ms)
+✔ User exige mayoría de edad y contraseña de ocho caracteres (6.1053ms)
+✔ Post aplica límites de título y contenido y fechas por defecto (3.2436ms)
+✔ Post rechaza protocolos de imagen distintos de http y https (0.4452ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1246.2745
+
+Los tres mensajes iniciales corresponden a los casos negativos esperados
+(recurso eliminado e identificador inválido); no indican fallos de la prueba.
