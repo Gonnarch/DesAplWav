@@ -1,0 +1,25 @@
+{
+  "name": "mongo-node",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Semana 06: laboratorio de Node.js y MongoDB",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "seed": "node scripts/seed.js",
+    "demo:console": "node scripts/demo-console.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "mongoose": "^8.18.2",
+    "express": "^5.1.0",
+    "ejs": "^3.1.10"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

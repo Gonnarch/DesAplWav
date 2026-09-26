@@ -1,0 +1,30 @@
+$ mongosh "mongodb://127.0.0.1:27018/socialmedia"
+
+socialmedia> show dbs
+admin         40.00 KiB
+config        12.00 KiB
+local         40.00 KiB
+socialmedia  100.00 KiB
+
+socialmedia> db.users.find().pretty()
+[
+  {
+    _id: ObjectId('6ab7cc01b79179fcbc2080f4'),
+    name: 'William',
+    lastName: 'Arévalo',
+    email: 'william@example.com',
+    __v: 0
+  }
+]
+
+
+socialmedia> db.posts.find().pretty()
+[
+  {
+    _id: ObjectId('6ab7cc01b79179fcbc2080f8'),
+    title: 'Hello',
+    content: 'Hi, this is my first post!',
+    user: ObjectId('6ab7cc01b79179fcbc2080f4'),
+    __v: 0
+  }
+]

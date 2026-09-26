@@ -1,0 +1,27 @@
+MongoDB conectado: socialmedia
+Usuarios actuales:
+[
+  {
+    "_id": "6ab7cc01b79179fcbc2080f4",
+    "name": "William",
+    "lastName": "Arévalo",
+    "email": "william@example.com",
+    "__v": 0
+  }
+]
+Posts registrados con su autor (populate):
+[
+  {
+    "_id": "6ab7cc01b79179fcbc2080f8",
+    "title": "Hello",
+    "content": "Hi, this is my first post!",
+    "user": {
+      "_id": "6ab7cc01b79179fcbc2080f4",
+      "name": "William",
+      "lastName": "Arévalo",
+      "email": "william@example.com",
+      "__v": 0
+    },
+    "__v": 0
+  }
+]
