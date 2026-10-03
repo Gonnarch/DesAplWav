@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Panel Administrativo</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="admin-page">
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-brand">
+            <div class="brand-mark">A</div>
+
+            <div>
+                <strong>AdminPanel</strong>
+                <span>Gestión del sistema</span>
+            </div>
+        </div>
+
+        <nav class="admin-menu">
+
+            <a href="/dashboard-admin" class="active">
+                Dashboard
+            </a>
+
+            <a href="/profile">
+                Mi cuenta
+            </a>
+
+            <button onclick="logout()">
+                Cerrar sesión
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="mini-admin">
+
+                <img
+                    id="sidebarPhoto"
+                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200"
+                    alt="Administrador"
+                >
+
+                <div>
+                    <strong id="sidebarName">
+                        Administrador
+                    </strong>
+
+                    <span>
+                        Sesión activa
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <main class="admin-main">
+
+        <header class="admin-header">
+
+            <div>
+
+                <span class="section-label">
+                    PANEL DE CONTROL
+                </span>
+
+                <h1>
+                    Buenos días,
+                    <span id="adminName">
+                        Administrador
+                    </span>
+                </h1>
+
+                <p>
+                    Gestiona los usuarios registrados
+                    y revisa la información del sistema.
+                </p>
+
+            </div>
+
+
+            <div class="admin-profile-summary">
+
+                <img
+                    id="adminPhoto"
+                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200"
+                    alt="Administrador"
+                >
+
+                <div>
+                    <strong id="adminFullName">
+                        Administrador
+                    </strong>
+
+                    <span>
+                        Administrador
+                    </span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="admin-stats">
+
+            <article class="stat-card">
+
+                <span class="stat-number" id="totalUsers">
+                    0
+                </span>
+
+                <h3>
+                    Usuarios registrados
+                </h3>
+
+                <p>
+                    Total de cuentas disponibles
+                    actualmente.
+                </p>
+
+                <div class="stat-line"></div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <span class="stat-number">
+                    JWT
+                </span>
+
+                <h3>
+                    Seguridad activa
+                </h3>
+
+                <p>
+                    Las sesiones utilizan
+                    autenticación mediante token.
+                </p>
+
+                <div class="stat-line"></div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <span class="stat-number">
+                    Online
+                </span>
+
+                <h3>
+                    Servidor disponible
+                </h3>
+
+                <p>
+                    MongoDB y Express se encuentran
+                    conectados.
+                </p>
+
+                <div class="stat-line"></div>
+
+            </article>
+
+        </section>
+
+
+        <section class="users-panel">
+
+            <div class="users-panel-header">
+
+                <div>
+
+                    <span class="section-label">
+                        USUARIOS
+                    </span>
+
+                    <h2>
+                        Usuarios registrados
+                    </h2>
+
+                    <p>
+                        Busca un usuario o consulta
+                        todos sus datos.
+                    </p>
+
+                </div>
+
+
+                <div class="search-wrapper">
+
+                    <input
+                        id="searchUser"
+                        type="text"
+                        placeholder="Buscar por nombre o correo..."
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="admin-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                            <th>Rol</th>
+                            <th>Registro</th>
+                            <th>Acción</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="usersTable">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div id="userModal" class="user-modal">
+
+        <div class="user-modal-backdrop"
+             onclick="closeModal()">
+        </div>
+
+
+        <section class="user-detail-card">
+
+            <button
+                class="modal-close"
+                onclick="closeModal()">
+                ×
+            </button>
+
+
+            <div class="user-detail-cover">
+
+                <div class="cover-shape cover-shape-one"></div>
+                <div class="cover-shape cover-shape-two"></div>
+
+            </div>
+
+
+            <div class="user-detail-content">
+
+                <img
+                    id="detailPhoto"
+                    class="detail-photo"
+                    src=""
+                    alt="Usuario"
+                >
+
+
+                <div class="detail-heading">
+
+                    <div>
+
+                        <h2 id="detailName">
+                            Usuario
+                        </h2>
+
+                        <span
+                            id="detailRole"
+                            class="detail-role">
+                            user
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detail-grid">
+
+                    <div class="detail-item">
+                        <span>Correo electrónico</span>
+                        <strong id="detailEmail"></strong>
+                    </div>
+
+
+                    <div class="detail-item">
+                        <span>Teléfono</span>
+                        <strong id="detailPhone"></strong>
+                    </div>
+
+
+                    <div class="detail-item">
+                        <span>Edad</span>
+                        <strong id="detailAge"></strong>
+                    </div>
+
+
+                    <div class="detail-item">
+                        <span>Fecha de nacimiento</span>
+                        <strong id="detailBirthdate"></strong>
+                    </div>
+
+
+                    <div class="detail-item detail-wide">
+                        <span>Dirección</span>
+                        <strong id="detailAddress"></strong>
+                    </div>
+
+
+                    <div class="detail-item detail-wide">
+                        <span>Fecha de registro</span>
+                        <strong id="detailCreated"></strong>
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="detail-close-button"
+                    onclick="closeModal()">
+
+                    Cerrar detalles
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script>
+
+        const token =
+            sessionStorage.getItem('token');
+
+        const roles =
+            JSON.parse(
+                sessionStorage.getItem('roles') || '[]'
+            );
+
+
+        if (!token) {
+
+            location.href = '/signIn';
+        }
+
+
+        if (!roles.includes('admin')) {
+
+            location.href = '/403';
+        }
+
+
+        let users = [];
+
+
+        async function loadAdmin() {
+
+            const response =
+                await fetch(
+                    '/api/users/me',
+                    {
+                        headers: {
+                            Authorization:
+                                `Bearer ${token}`
+                        }
+                    }
+                );
+
+
+            if (response.status === 401) {
+
+                sessionStorage.clear();
+
+                location.href = '/signIn';
+
+                return;
+            }
+
+
+            const admin =
+                await response.json();
+
+
+            const fullName =
+                `${admin.name} ${admin.lastName}`;
+
+
+            document.getElementById(
+                'adminName'
+            ).textContent =
+                admin.name;
+
+
+            document.getElementById(
+                'adminFullName'
+            ).textContent =
+                fullName;
+
+
+            document.getElementById(
+                'sidebarName'
+            ).textContent =
+                fullName;
+
+
+            if (admin.url_profile) {
+
+                document.getElementById(
+                    'adminPhoto'
+                ).src =
+                    admin.url_profile;
+
+                document.getElementById(
+                    'sidebarPhoto'
+                ).src =
+                    admin.url_profile;
+            }
+        }
+
+
+        async function loadUsers() {
+
+            const response =
+                await fetch(
+                    '/api/users',
+                    {
+                        headers: {
+                            Authorization:
+                                `Bearer ${token}`
+                        }
+                    }
+                );
+
+
+            if (response.status === 401) {
+
+                sessionStorage.clear();
+
+                location.href = '/signIn';
+
+                return;
+            }
+
+
+            if (response.status === 403) {
+
+                location.href = '/403';
+
+                return;
+            }
+
+
+            users =
+                await response.json();
+
+
+            document.getElementById(
+                'totalUsers'
+            ).textContent =
+                users.length;
+
+
+            renderUsers(users);
+        }
+
+
+        function renderUsers(list) {
+
+            const table =
+                document.getElementById(
+                    'usersTable'
+                );
+
+
+            if (list.length === 0) {
+
+                table.innerHTML = `
+
+                    <tr>
+
+                        <td
+                            colspan="6"
+                            class="empty-users">
+
+                            No se encontraron usuarios.
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+                return;
+            }
+
+
+            table.innerHTML =
+                list.map(
+                    user => {
+
+                        const originalIndex =
+                            users.findIndex(
+                                u => u.id === user.id
+                            );
+
+
+                        const photo =
+                            user.url_profile ||
+                            'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150';
+
+
+                        const registrationDate =
+                            user.createdAt
+                                ? new Date(
+                                    user.createdAt
+                                ).toLocaleDateString(
+                                    'es-PE'
+                                )
+                                : 'Sin fecha';
+
+
+                        return `
+
+                            <tr>
+
+                                <td>
+
+                                    <div class="table-user">
+
+                                        <img
+                                            src="${photo}"
+                                            alt="Usuario"
+                                        >
+
+                                        <div>
+
+                                            <strong>
+                                                ${user.name}
+                                                ${user.lastName}
+                                            </strong>
+
+                                            <span>
+                                                ID:
+                                                ${user.id.slice(-6)}
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    ${user.email}
+                                </td>
+
+
+                                <td>
+                                    ${user.phoneNumber}
+                                </td>
+
+
+                                <td>
+
+                                    <span class="role-badge">
+
+                                        ${user.roles.join(', ')}
+
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+                                    ${registrationDate}
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        class="details-button"
+                                        onclick="showUser(${originalIndex})">
+
+                                        Ver detalles
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        `;
+                    }
+
+                ).join('');
+        }
+
+
+        document
+            .getElementById('searchUser')
+            .addEventListener(
+                'input',
+                event => {
+
+                    const search =
+                        event.target.value
+                            .toLowerCase()
+                            .trim();
+
+
+                    const filtered =
+                        users.filter(
+                            user => {
+
+                                const name =
+                                    `${user.name} ${user.lastName}`
+                                        .toLowerCase();
+
+                                const email =
+                                    user.email
+                                        .toLowerCase();
+
+
+                                return (
+                                    name.includes(search) ||
+                                    email.includes(search)
+                                );
+                            }
+                        );
+
+
+                    renderUsers(filtered);
+                }
+            );
+
+
+        function showUser(index) {
+
+            const user =
+                users[index];
+
+
+            document.getElementById(
+                'detailPhoto'
+            ).src =
+                user.url_profile ||
+                'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400';
+
+
+            document.getElementById(
+                'detailName'
+            ).textContent =
+                `${user.name} ${user.lastName}`;
+
+
+            document.getElementById(
+                'detailRole'
+            ).textContent =
+                user.roles.join(', ');
+
+
+            document.getElementById(
+                'detailEmail'
+            ).textContent =
+                user.email;
+
+
+            document.getElementById(
+                'detailPhone'
+            ).textContent =
+                user.phoneNumber;
+
+
+            document.getElementById(
+                'detailAge'
+            ).textContent =
+                `${user.age} años`;
+
+
+            document.getElementById(
+                'detailBirthdate'
+            ).textContent =
+                user.birthdate
+                    ? new Date(
+                        user.birthdate
+                    ).toLocaleDateString(
+                        'es-PE'
+                    )
+                    : 'No registrada';
+
+
+            document.getElementById(
+                'detailAddress'
+            ).textContent =
+                user.address ||
+                'No registrada';
+
+
+            document.getElementById(
+                'detailCreated'
+            ).textContent =
+                user.createdAt
+                    ? new Date(
+                        user.createdAt
+                    ).toLocaleDateString(
+                        'es-PE'
+                    )
+                    : 'No disponible';
+
+
+            document
+                .getElementById(
+                    'userModal'
+                )
+                .classList.add('active');
+        }
+
+
+        function closeModal() {
+
+            document
+                .getElementById(
+                    'userModal'
+                )
+                .classList.remove('active');
+        }
+
+
+        function logout() {
+
+            sessionStorage.clear();
+
+            location.href = '/signIn';
+        }
+
+
+        loadAdmin();
+
+        loadUsers();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mi perfil</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+</head>
+
+<body class="pf-page">
+
+    <main class="pf-wrapper">
+
+        <section class="pf-card">
+
+            <!-- PANEL IZQUIERDO -->
+
+            <aside class="pf-sidebar">
+
+                <div class="pf-shape pf-shape-one"></div>
+                <div class="pf-shape pf-shape-two"></div>
+
+                <div class="pf-photo-frame">
+
+                    <img
+                        id="profileImage"
+                        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500"
+                        alt="Foto de perfil"
+                    >
+
+                </div>
+
+                <h2 id="fullName">
+                    Mi perfil
+                </h2>
+
+                <span
+                    id="roleText"
+                    class="pf-role"
+                >
+                    Usuario
+                </span>
+
+                <div class="pf-age-box">
+
+                    <strong id="age">
+                        0
+                    </strong>
+
+                    <span>
+                        años
+                    </span>
+
+                </div>
+
+                <p class="pf-description">
+                    Administra tu información personal
+                    y mantén tus datos actualizados.
+                </p>
+
+                <a
+                    id="backDashboard"
+                    href="/dashboard-user"
+                    class="pf-back"
+                >
+                    ← Volver al dashboard
+                </a>
+
+            </aside>
+
+
+            <!-- PANEL DERECHO -->
+
+            <section class="pf-content">
+
+                <header class="pf-header">
+
+                    <div>
+
+                        <span class="pf-kicker">
+                            MI CUENTA
+                        </span>
+
+                        <h1>
+                            Información personal
+                        </h1>
+
+                        <p>
+                            Revisa y actualiza los datos
+                            asociados a tu perfil.
+                        </p>
+
+                    </div>
+
+                    <span class="pf-active">
+                        Cuenta activa
+                    </span>
+
+                </header>
+
+
+                <form id="profileForm">
+
+                    <section class="pf-section">
+
+                        <h3>
+                            Datos personales
+                        </h3>
+
+                        <div class="pf-grid">
+
+                            <div class="pf-field">
+
+                                <label for="name">
+                                    Nombre
+                                </label>
+
+                                <input
+                                    id="name"
+                                    type="text"
+                                    placeholder="Escribe tu nombre"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="pf-field">
+
+                                <label for="lastName">
+                                    Apellido
+                                </label>
+
+                                <input
+                                    id="lastName"
+                                    type="text"
+                                    placeholder="Escribe tu apellido"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="pf-field">
+
+                                <label for="phoneNumber">
+                                    Teléfono
+                                </label>
+
+                                <input
+                                    id="phoneNumber"
+                                    type="text"
+                                    placeholder="Ej. 987654321"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="pf-field">
+
+                                <label for="birthdate">
+                                    Fecha de nacimiento
+                                </label>
+
+                                <input
+                                    id="birthdate"
+                                    type="date"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="pf-field pf-full">
+
+                                <label for="address">
+                                    Dirección
+                                </label>
+
+                                <input
+                                    id="address"
+                                    type="text"
+                                    placeholder="Escribe tu dirección"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <div class="pf-divider"></div>
+
+
+                    <section class="pf-section">
+
+                        <h3>
+                            Datos de cuenta
+                        </h3>
+
+                        <div class="pf-grid">
+
+                            <div class="pf-field">
+
+                                <label for="email">
+                                    Correo electrónico
+                                </label>
+
+                                <input
+                                    id="email"
+                                    type="email"
+                                    disabled
+                                >
+
+                            </div>
+
+                            <div class="pf-field">
+
+                                <label for="url_profile">
+                                    URL de foto de perfil
+                                </label>
+
+                                <input
+                                    id="url_profile"
+                                    type="text"
+                                    placeholder="Pega una URL de imagen"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <div class="pf-actions">
+
+                        <p
+                            id="message"
+                            class="pf-message"
+                        ></p>
+
+                        <button
+                            type="submit"
+                            class="pf-save"
+                        >
+                            Guardar cambios
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        const token =
+            sessionStorage.getItem('token');
+
+        const roles =
+            JSON.parse(
+                sessionStorage.getItem('roles') || '[]'
+            );
+
+        const fallbackPhoto =
+            'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500';
+
+
+        if (!token) {
+            location.href = '/signIn';
+        }
+
+
+        if (roles.includes('admin')) {
+
+            document.getElementById(
+                'backDashboard'
+            ).href = '/dashboard-admin';
+        }
+
+
+        const profileImage =
+            document.getElementById(
+                'profileImage'
+            );
+
+        const urlProfile =
+            document.getElementById(
+                'url_profile'
+            );
+
+
+        profileImage.onerror =
+            function () {
+                this.src = fallbackPhoto;
+            };
+
+
+        urlProfile.addEventListener(
+            'input',
+
+            () => {
+
+                const value =
+                    urlProfile.value.trim();
+
+                if (value) {
+                    profileImage.src = value;
+                }
+            }
+        );
+
+
+        async function loadProfile() {
+
+            const response =
+                await fetch(
+                    '/api/users/me',
+                    {
+                        headers: {
+                            Authorization:
+                                `Bearer ${token}`
+                        }
+                    }
+                );
+
+
+            if (response.status === 401) {
+
+                sessionStorage.clear();
+
+                location.href = '/signIn';
+
+                return;
+            }
+
+
+            const user =
+                await response.json();
+
+
+            document.getElementById('name').value =
+                user.name || '';
+
+            document.getElementById('lastName').value =
+                user.lastName || '';
+
+            document.getElementById('phoneNumber').value =
+                user.phoneNumber || '';
+
+            document.getElementById('email').value =
+                user.email || '';
+
+            document.getElementById('address').value =
+                user.address || '';
+
+            document.getElementById('url_profile').value =
+                user.url_profile || '';
+
+            document.getElementById('birthdate').value =
+                user.birthdate
+                    ? user.birthdate.substring(0, 10)
+                    : '';
+
+
+            document.getElementById(
+                'fullName'
+            ).textContent =
+                `${user.name} ${user.lastName}`;
+
+
+            document.getElementById(
+                'age'
+            ).textContent =
+                user.age;
+
+
+            document.getElementById(
+                'roleText'
+            ).textContent =
+                user.roles.includes('admin')
+                    ? 'Administrador'
+                    : 'Usuario';
+
+
+            if (user.url_profile) {
+                profileImage.src =
+                    user.url_profile;
+            }
+        }
+
+
+        document
+            .getElementById('profileForm')
+            .addEventListener(
+                'submit',
+
+                async event => {
+
+                    event.preventDefault();
+
+
+                    const button =
+                        document.querySelector(
+                            '.pf-save'
+                        );
+
+                    button.disabled = true;
+                    button.textContent =
+                        'Guardando...';
+
+
+                    const payload = {
+
+                        name:
+                            document.getElementById(
+                                'name'
+                            ).value,
+
+                        lastName:
+                            document.getElementById(
+                                'lastName'
+                            ).value,
+
+                        phoneNumber:
+                            document.getElementById(
+                                'phoneNumber'
+                            ).value,
+
+                        birthdate:
+                            document.getElementById(
+                                'birthdate'
+                            ).value,
+
+                        address:
+                            document.getElementById(
+                                'address'
+                            ).value,
+
+                        url_profile:
+                            document.getElementById(
+                                'url_profile'
+                            ).value
+                    };
+
+
+                    const response =
+                        await fetch(
+                            '/api/users/me',
+                            {
+                                method: 'PUT',
+
+                                headers: {
+                                    'Content-Type':
+                                        'application/json',
+
+                                    Authorization:
+                                        `Bearer ${token}`
+                                },
+
+                                body:
+                                    JSON.stringify(payload)
+                            }
+                        );
+
+
+                    const result =
+                        await response.json();
+
+
+                    const message =
+                        document.getElementById(
+                            'message'
+                        );
+
+
+                    if (!response.ok) {
+
+                        message.className =
+                            'pf-message error';
+
+                        message.textContent =
+                            result.message ||
+                            'No se pudo guardar';
+
+                    } else {
+
+                        message.className =
+                            'pf-message success';
+
+                        message.textContent =
+                            'Cambios guardados correctamente';
+
+                        await loadProfile();
+                    }
+
+
+                    button.disabled = false;
+
+                    button.textContent =
+                        'Guardar cambios';
+                }
+            );
+
+
+        loadProfile();
+
+    </script>
+
+</body>
+
+</html>
