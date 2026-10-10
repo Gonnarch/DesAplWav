@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Crear cuenta</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+</head>
+
+
+<body class="signup-page">
+
+    <main class="signup-overlay">
+
+        <section class="signup-card">
+
+            <div class="signup-title">
+
+                <span class="signup-small-title">
+                    NUEVA CUENTA
+                </span>
+
+                <h1>
+                    Crea tu cuenta
+                </h1>
+
+                <p>
+                    Completa tus datos para comenzar.
+                </p>
+
+            </div>
+
+
+            <form id="signupForm">
+
+                <div class="signup-section">
+
+                    <div class="signup-section-title">
+
+                        <h3>
+                            Información personal
+                        </h3>
+
+                        <p>
+                            Cuéntanos un poco sobre ti.
+                        </p>
+
+                    </div>
+
+
+                    <div class="signup-form-grid">
+
+
+                        <div class="signup-field">
+
+                            <label for="name">
+                                Nombre
+                            </label>
+
+                            <input
+                                id="name"
+                                type="text"
+                                placeholder="Ej. Carlos"
+                                autocomplete="given-name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="signup-field">
+
+                            <label for="lastName">
+                                Apellido
+                            </label>
+
+                            <input
+                                id="lastName"
+                                type="text"
+                                placeholder="Ej. Carbajal"
+                                autocomplete="family-name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="signup-field">
+
+                            <label for="phoneNumber">
+                                Teléfono
+                            </label>
+
+                            <input
+                                id="phoneNumber"
+                                type="text"
+                                placeholder="Ej. 987654321"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="signup-field">
+
+                            <label for="birthdate">
+                                Fecha de nacimiento
+                            </label>
+
+                            <input
+                                id="birthdate"
+                                type="date"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="signup-divider"></div>
+
+
+                <div class="signup-section">
+
+                    <div class="signup-section-title">
+
+                        <h3>
+                            Datos de acceso
+                        </h3>
+
+                        <p>
+                            Estos datos serán utilizados
+                            para iniciar sesión.
+                        </p>
+
+                    </div>
+
+
+                    <div class="signup-form-grid">
+
+
+                        <div class="signup-field">
+
+                            <label for="email">
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                id="email"
+                                type="email"
+                                placeholder="ejemplo@correo.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="signup-field">
+
+                            <label for="password">
+                                Contraseña
+                            </label>
+
+                            <div class="password-field-wrapper">
+
+                                <input
+                                    id="password"
+                                    type="password"
+                                    placeholder="Crea una contraseña segura"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="show-password-button"
+                                    onclick="toggleSignupPassword()"
+                                >
+                                    Mostrar
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="password-rules">
+
+                        <strong>
+                            Tu contraseña debe incluir:
+                        </strong>
+
+                        <span>
+                            mínimo 8 caracteres
+                        </span>
+
+                        <span>
+                            una mayúscula
+                        </span>
+
+                        <span>
+                            un número
+                        </span>
+
+                        <span>
+                            uno de estos símbolos:
+                            # $ % & * @
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="signup-main-button"
+                    type="submit"
+                >
+                    Crear mi cuenta
+                </button>
+
+
+                <p
+                    id="mensaje"
+                    class="signup-message"
+                ></p>
+
+
+                <p class="signup-login-link">
+
+                    ¿Ya tienes una cuenta?
+
+                    <a href="/signIn">
+                        Iniciar sesión
+                    </a>
+
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        function toggleSignupPassword() {
+
+            const password =
+                document.getElementById(
+                    'password'
+                );
+
+            const button =
+                document.querySelector(
+                    '.show-password-button'
+                );
+
+
+            if (password.type === 'password') {
+
+                password.type = 'text';
+
+                button.textContent =
+                    'Ocultar';
+
+            } else {
+
+                password.type =
+                    'password';
+
+                button.textContent =
+                    'Mostrar';
+            }
+        }
+
+
+        document
+            .getElementById(
+                'signupForm'
+            )
+            .addEventListener(
+                'submit',
+
+                async event => {
+
+                    event.preventDefault();
+
+
+                    const payload = {
+
+                        name:
+                            document.getElementById(
+                                'name'
+                            ).value.trim(),
+
+                        lastName:
+                            document.getElementById(
+                                'lastName'
+                            ).value.trim(),
+
+                        phoneNumber:
+                            document.getElementById(
+                                'phoneNumber'
+                            ).value.trim(),
+
+                        birthdate:
+                            document.getElementById(
+                                'birthdate'
+                            ).value,
+
+                        email:
+                            document.getElementById(
+                                'email'
+                            ).value.trim(),
+
+                        password:
+                            document.getElementById(
+                                'password'
+                            ).value
+                    };
+
+
+                    const response =
+                        await fetch(
+                            '/api/auth/signUp',
+                            {
+
+                                method: 'POST',
+
+                                headers: {
+
+                                    'Content-Type':
+                                        'application/json'
+                                },
+
+                                body:
+                                    JSON.stringify(
+                                        payload
+                                    )
+                            }
+                        );
+
+
+                    const data =
+                        await response.json();
+
+
+                    const mensaje =
+                        document.getElementById(
+                            'mensaje'
+                        );
+
+
+                    if (!response.ok) {
+
+                        mensaje.className =
+                            'signup-message error';
+
+                        mensaje.textContent =
+                            data.message ||
+                            'No se pudo crear la cuenta';
+
+                        return;
+                    }
+
+
+                    mensaje.className =
+                        'signup-message success';
+
+                    mensaje.textContent =
+                        'Cuenta creada correctamente. Redirigiendo...';
+
+
+                    setTimeout(() => {
+
+                        location.href =
+                            '/signIn';
+
+                    }, 1200);
+                }
+            );
+
+    </script>
+
+</body>
+
+</html>

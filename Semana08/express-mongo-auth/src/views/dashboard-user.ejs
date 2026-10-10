@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mi espacio</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+</head>
+
+<body class="ud-page">
+
+    <!-- NAVBAR -->
+
+    <nav class="ud-nav">
+
+        <a
+            href="/dashboard-user"
+            class="ud-brand"
+        >
+            <span class="ud-brand-shape"></span>
+
+            <div>
+                <strong>Mi Espacio</strong>
+                <small>Panel personal</small>
+            </div>
+        </a>
+
+
+        <div class="ud-nav-right">
+
+            <a
+                href="/profile"
+                class="ud-nav-profile"
+            >
+
+                <img
+                    id="navUserPhoto"
+                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150"
+                    alt="Perfil"
+                >
+
+                <span>
+                    Mi perfil
+                </span>
+
+            </a>
+
+
+            <button
+                onclick="logout()"
+                class="ud-logout"
+            >
+                Cerrar sesión
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="ud-hero">
+
+            <div class="ud-light ud-light-one"></div>
+            <div class="ud-light ud-light-two"></div>
+
+
+            <div class="ud-hero-content">
+
+                <span class="ud-eyebrow">
+                    TU ESPACIO PERSONAL
+                </span>
+
+
+                <h1>
+                    Hola,
+                    <span id="heroName">
+                        Usuario
+                    </span>
+                </h1>
+
+
+                <p>
+                    Aquí tienes todo lo relacionado con
+                    tu cuenta. Consulta tus datos, revisa
+                    tu información y personaliza tu perfil.
+                </p>
+
+
+                <div class="ud-hero-actions">
+
+                    <a
+                        href="/profile"
+                        class="ud-primary-button"
+                    >
+                        Editar mi perfil
+                    </a>
+
+
+                    <div class="ud-security-status">
+
+                        <span class="ud-status-dot"></span>
+
+                        Sesión protegida con JWT
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOTO REAL DEL USUARIO -->
+
+            <div class="ud-profile-visual">
+
+                <div class="ud-photo-orbit orbit-one"></div>
+                <div class="ud-photo-orbit orbit-two"></div>
+
+
+                <div class="ud-main-photo">
+
+                    <img
+                        id="heroUserPhoto"
+                        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500"
+                        alt="Foto del usuario"
+                    >
+
+                </div>
+
+
+                <div class="ud-floating-name">
+
+                    <strong id="floatingName">
+                        Usuario
+                    </strong>
+
+                    <span>
+                        Cuenta activa
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMACIÓN -->
+
+        <section class="ud-info-section">
+
+            <div class="ud-section-heading">
+
+                <div>
+
+                    <span>
+                        RESUMEN
+                    </span>
+
+                    <h2>
+                        Tu cuenta de un vistazo
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Información actual de tu perfil.
+                </p>
+
+            </div>
+
+
+            <div class="ud-cards">
+
+                <!-- CARD 1 -->
+
+                <article class="ud-card ud-card-profile">
+
+                    <div class="ud-card-background"></div>
+
+                    <div class="ud-card-content">
+
+                        <span class="ud-card-number">
+                            01
+                        </span>
+
+                        <div class="ud-card-bottom">
+
+                            <span class="ud-card-label">
+                                PERFIL
+                            </span>
+
+                            <h3>
+                                Tu información
+                            </h3>
+
+                            <p id="cardEmail">
+                                Cargando correo...
+                            </p>
+
+                            <a href="/profile">
+                                Revisar información →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 2 -->
+
+                <article class="ud-card ud-card-contact">
+
+                    <div class="ud-card-background"></div>
+
+                    <div class="ud-card-content">
+
+                        <span class="ud-card-number">
+                            02
+                        </span>
+
+                        <div class="ud-card-bottom">
+
+                            <span class="ud-card-label">
+                                CONTACTO
+                            </span>
+
+                            <h3>
+                                Datos personales
+                            </h3>
+
+                            <p id="cardPhone">
+                                Cargando teléfono...
+                            </p>
+
+                            <a href="/profile">
+                                Actualizar datos →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 3 -->
+
+                <article class="ud-card ud-card-security">
+
+                    <div class="ud-card-background"></div>
+
+                    <div class="ud-card-content">
+
+                        <span class="ud-card-number">
+                            03
+                        </span>
+
+                        <div class="ud-card-bottom">
+
+                            <span class="ud-card-label">
+                                SEGURIDAD
+                            </span>
+
+                            <h3>
+                                Sesión protegida
+                            </h3>
+
+                            <p>
+                                Tu acceso utiliza autenticación
+                                mediante JWT y expiración automática.
+                            </p>
+
+                            <span class="ud-card-secure">
+                                Protección activa
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- BANNER INFERIOR -->
+
+        <section class="ud-profile-banner">
+
+            <div>
+
+                <span>
+                    PERSONALIZA TU EXPERIENCIA
+                </span>
+
+                <h2>
+                    Haz que tu perfil se sienta tuyo.
+                </h2>
+
+                <p>
+                    Puedes cambiar tu foto, dirección,
+                    teléfono y demás información desde
+                    tu cuenta.
+                </p>
+
+            </div>
+
+
+            <a href="/profile">
+                Ir a mi cuenta
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        const token =
+            sessionStorage.getItem('token');
+
+
+        if (!token) {
+
+            location.href =
+                '/signIn';
+        }
+
+
+        const fallbackPhoto =
+            'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500';
+
+
+        async function loadUser() {
+
+            const response =
+                await fetch(
+                    '/api/users/me',
+                    {
+
+                        headers: {
+
+                            Authorization:
+                                `Bearer ${token}`
+                        }
+                    }
+                );
+
+
+            if (response.status === 401) {
+
+                sessionStorage.clear();
+
+                location.href =
+                    '/signIn';
+
+                return;
+            }
+
+
+            const user =
+                await response.json();
+
+
+            const fullName =
+                `${user.name} ${user.lastName}`;
+
+
+            document.getElementById(
+                'heroName'
+            ).textContent =
+                user.name;
+
+
+            document.getElementById(
+                'floatingName'
+            ).textContent =
+                fullName;
+
+
+            document.getElementById(
+                'cardEmail'
+            ).textContent =
+                user.email;
+
+
+            document.getElementById(
+                'cardPhone'
+            ).textContent =
+                user.phoneNumber ||
+                'Teléfono no registrado';
+
+
+            const photo =
+                user.url_profile ||
+                fallbackPhoto;
+
+
+            document.getElementById(
+                'heroUserPhoto'
+            ).src =
+                photo;
+
+
+            document.getElementById(
+                'navUserPhoto'
+            ).src =
+                photo;
+        }
+
+
+        document.getElementById(
+            'heroUserPhoto'
+        ).onerror =
+            function () {
+
+                this.src =
+                    fallbackPhoto;
+            };
+
+
+        document.getElementById(
+            'navUserPhoto'
+        ).onerror =
+            function () {
+
+                this.src =
+                    fallbackPhoto;
+            };
+
+
+        function logout() {
+
+            sessionStorage.clear();
+
+            location.href =
+                '/signIn';
+        }
+
+
+        loadUser();
+
+    </script>
+
+</body>
+
+</html>
