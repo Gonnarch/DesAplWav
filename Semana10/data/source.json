@@ -1,0 +1,10 @@
+{
+  "source": "https://rickandmortyapi.com/api/character",
+  "capturedAt": "2026-10-24T14:48:14.722Z",
+  "info": {
+    "count": 826,
+    "pages": 42,
+    "next": "https://rickandmortyapi.com/api/character?page=2",
+    "prev": null
+  }
+}
