@@ -1,0 +1,1 @@
+import Link from 'next/link';export default function NotFound(){return <main className="failure"><p className="eyebrow">404 / FUERA DEL ARCHIVO</p><h1>No encontramos ese registro</h1><p>Revisa el nombre o el identificador y vuelve a explorar.</p><Link className="button" href="/pokemon">Volver a la Pokédex</Link></main>}

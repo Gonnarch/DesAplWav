@@ -1,0 +1,1 @@
+"use client";export default function ErrorPage({reset}:{reset:()=>void}){return <main className="failure"><p className="eyebrow">CONEXIÓN INTERRUMPIDA</p><h1>El portal está inestable</h1><p>No pudimos cargar los datos. Puedes volver a intentarlo.</p><button className="button" onClick={()=>reset()}>Reintentar</button><a href="/pokemon">Volver a la Pokédex</a></main>}

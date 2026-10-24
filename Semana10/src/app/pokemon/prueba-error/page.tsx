@@ -1,0 +1,1 @@
+export const dynamic='force-dynamic';export default function Demo(){throw new Error('Fallo controlado para verificar error.tsx')}

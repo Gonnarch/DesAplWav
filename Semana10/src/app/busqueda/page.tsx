@@ -1,0 +1,1 @@
+import Search from './Search';export default function SearchPage(){return <main><p className="eyebrow">EXPLORADOR DEL MULTIVERSO</p><h1>Encuentra tu <em>personaje.</em></h1><p className="intro">Busca en todas las dimensiones. Los resultados se actualizan mientras escribes.</p><Search/></main>}

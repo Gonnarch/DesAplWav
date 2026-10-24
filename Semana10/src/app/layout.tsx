@@ -1,0 +1,4 @@
+import './globals.css';
+import Link from 'next/link';
+export const metadata={title:'Portal C 137 | Archivo de personajes',description:'Explora los personajes de Rick and Morty'};
+export default function Layout({children}:{children:React.ReactNode}){return <html lang="es"><body><header className="topbar"><Link href="/" className="brand">◉ PORTAL <span>C 137</span></Link><nav><Link href="/">Personajes</Link><Link href="/busqueda">Explorar</Link><Link href="/pokemon">Pokédex</Link></nav><span className="online">● Sistema conectado</span></header>{children}<footer>PORTAL C 137 <span>Archivo del multiverso · Laboratorio 10 · Next.js App Router</span></footer></body></html>}
