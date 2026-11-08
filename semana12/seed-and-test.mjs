@@ -1,0 +1,38 @@
+import fs from 'node:fs';
+const root='http://127.0.0.1:3000';
+const evidence=[];
+async function call(name,path,method='GET',body,expected=200){const r=await fetch(root+path,{method,headers:{'Content-Type':'application/json'},...(body?{body:JSON.stringify(body)}:{})});const data=await r.json();evidence.push({name,url:root+path,method,body,status:r.status,data});if(r.status!==expected)throw Error(name+': '+r.status+' '+JSON.stringify(data));return data;}
+const authors=[{name:'Gabriel García Márquez',email:'gabo@example.com',nationality:'Colombia',birthYear:1927,bio:'Premio Nobel de Literatura 1982'},{name:'Isabel Allende',email:'isabel@example.com',nationality:'Chile',birthYear:1942,bio:'Narradora de historias familiares y memoria latinoamericana'},{name:'Julio Cortázar',email:'julio@example.com',nationality:'Argentina',birthYear:1914,bio:'Autor de cuentos y novelas de literatura fantástica'}];
+const existing=await call('Ejercicio 1 · Listar autores','/api/authors');
+const saved=[];
+for(const a of authors)saved.push(existing.find(x=>x.email===a.email)??await call('Ejercicio 1 · Crear autor','/api/authors','POST',a,201));
+const a=saved[0];
+await call('Ejercicio 2 · Autor por ID','/api/authors/'+a.id);
+await call('Ejercicio 2 · Actualizar autor','/api/authors/'+a.id,'PUT',{name:a.name,bio:'Autor de Cien años de soledad'});
+const titles=[['Cien años de soledad',1967,'Novela',417,0],['El amor en los tiempos del cólera',1985,'Novela',348,0],['La hojarasca',1955,'Novela',128,0],['Crónica de una muerte anunciada',1981,'Novela',122,0],['Relato de un náufrago',1970,'Periodismo',110,0],['Doce cuentos peregrinos',1992,'Cuento',232,0],['Memoria de mis putas tristes',2004,'Novela',109,0],['La casa de los espíritus',1982,'Novela',448,1],['De amor y de sombra',1984,'Novela',304,1],['Paula',1994,'Memorias',368,1],['Rayuela',1963,'Novela',600,2],['Final del juego',1956,'Cuento',200,2],['Bestiario',1951,'Cuento',160,2]];
+const old=await call('Ejercicio 4 · Listar libros','/api/books');
+for(let i=0;i<titles.length;i++){const [title,publishedYear,genre,pages,ai]=titles[i];if(!old.some(b=>b.title===title))await call('Ejercicio 4 · Crear libro','/api/books','POST',{title,publishedYear,genre,pages,authorId:saved[ai].id,isbn:i===0?'978-0307474728':null,description:i===0?'Obra maestra del realismo mágico':'Ejemplar del catálogo de práctica'},201);}
+const all=await call('Ejercicio 4 · Listar libros con autores','/api/books');
+await call('Ejercicio 3 · Libros de un autor','/api/authors/'+a.id+'/books');
+await call('Ejercicio 4 · Filtrar género','/api/books?genre=Novela');
+const b=all.find(b=>b.title==='Cien años de soledad');
+await call('Ejercicio 5 · Libro por ID','/api/books/'+b.id);
+await call('Ejercicio 5 · Actualizar libro','/api/books/'+b.id,'PUT',{description:'Obra maestra del realismo mágico'});
+const temp=await call('Ejercicio 5 · Crear libro de prueba','/api/books','POST',{title:'Ejemplar temporal de prueba',authorId:a.id,pages:100},201);
+await call('Ejercicio 5 · Eliminar libro','/api/books/'+temp.id,'DELETE');
+await call('Ejercicio 5 · Verificar eliminación','/api/books/'+temp.id,'GET',undefined,404);
+const ta=await call('Ejercicio 2 · Crear autor temporal','/api/authors','POST',{name:'Autor temporal',email:'temporal-'+Date.now()+'@example.com'},201);
+await call('Tarea · Autor sin libros','/api/authors/'+ta.id+'/stats');
+await call('Ejercicio 2 · Eliminar autor','/api/authors/'+ta.id,'DELETE');
+await call('Tarea · Búsqueda combinada','/api/books/search?search=AMOR&genre=Novela&page=1&limit=10&sortBy=publishedYear&order=desc');
+await call('Tarea · Búsqueda por autor','/api/books/search?authorName=GARCÍA&page=1&limit=3&sortBy=title&order=asc');
+await call('Tarea · Paginación segunda página','/api/books/search?page=2&limit=3&sortBy=title&order=asc');
+await call('Tarea · Parámetros por defecto','/api/books/search');
+const capped=await call('Tarea · Límite máximo','/api/books/search?limit=100');if(capped.pagination.limit!==50)throw Error('Limit cap');
+await call('Tarea · Página inválida','/api/books/search?page=0','GET',undefined,400);
+await call('Tarea · Estadísticas del autor','/api/authors/'+a.id+'/stats');
+await call('Validación · Email duplicado','/api/authors','POST',authors[0],409);
+await call('Validación · Datos inválidos','/api/books','POST',{title:''},400);
+fs.writeFileSync('../evidence.json',JSON.stringify(evidence,null,2));
+fs.writeFileSync('../ids.json',JSON.stringify({author:a.id,book:b.id}));
+console.log(`${evidence.length} comprobaciones completadas; resultados guardados.`);

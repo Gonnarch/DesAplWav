@@ -1,0 +1,1140 @@
+{
+  "info": {
+    "name": "Semana 12 - Biblioteca",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Ejercicio 1 · Listar autores",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/authors"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/authors"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[]",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 1 · Crear autor",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/authors",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Gabriel García Márquez\",\n  \"email\": \"gabo@example.com\",\n  \"nationality\": \"Colombia\",\n  \"birthYear\": 1927,\n  \"bio\": \"Premio Nobel de Literatura 1982\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "201 resultado real",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/authors",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Gabriel García Márquez\",\n  \"email\": \"gabo@example.com\",\n  \"nationality\": \"Colombia\",\n  \"birthYear\": 1927,\n  \"bio\": \"Premio Nobel de Literatura 1982\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"cmw727kln0000utt4pi4jstt5\",\n  \"name\": \"Gabriel García Márquez\",\n  \"email\": \"gabo@example.com\",\n  \"bio\": \"Premio Nobel de Literatura 1982\",\n  \"nationality\": \"Colombia\",\n  \"birthYear\": 1927,\n  \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n  \"updatedAt\": \"2026-11-07T23:53:40.619Z\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 2 · Autor por ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/authors/cmw727kln0000utt4pi4jstt5"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/authors/cmw727kln0000utt4pi4jstt5"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"cmw727kln0000utt4pi4jstt5\",\n  \"name\": \"Gabriel García Márquez\",\n  \"email\": \"gabo@example.com\",\n  \"bio\": \"Premio Nobel de Literatura 1982\",\n  \"nationality\": \"Colombia\",\n  \"birthYear\": 1927,\n  \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n  \"updatedAt\": \"2026-11-07T23:53:40.619Z\",\n  \"_count\": {\n    \"books\": 0\n  }\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 2 · Actualizar autor",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/authors/cmw727kln0000utt4pi4jstt5",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Gabriel García Márquez\",\n  \"bio\": \"Autor de Cien años de soledad\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/authors/cmw727kln0000utt4pi4jstt5",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Gabriel García Márquez\",\n  \"bio\": \"Autor de Cien años de soledad\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"cmw727kln0000utt4pi4jstt5\",\n  \"name\": \"Gabriel García Márquez\",\n  \"email\": \"gabo@example.com\",\n  \"bio\": \"Autor de Cien años de soledad\",\n  \"nationality\": \"Colombia\",\n  \"birthYear\": 1927,\n  \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n  \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 4 · Listar libros",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[]",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 4 · Crear libro",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Cien años de soledad\",\n  \"publishedYear\": 1967,\n  \"genre\": \"Novela\",\n  \"pages\": 417,\n  \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n  \"isbn\": \"978-0307474728\",\n  \"description\": \"Obra maestra del realismo mágico\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "201 resultado real",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Cien años de soledad\",\n  \"publishedYear\": 1967,\n  \"genre\": \"Novela\",\n  \"pages\": 417,\n  \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n  \"isbn\": \"978-0307474728\",\n  \"description\": \"Obra maestra del realismo mágico\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"cmw727mwk0004utt4yzj78mmz\",\n  \"title\": \"Cien años de soledad\",\n  \"description\": \"Obra maestra del realismo mágico\",\n  \"isbn\": \"978-0307474728\",\n  \"publishedYear\": 1967,\n  \"genre\": \"Novela\",\n  \"pages\": 417,\n  \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n  \"createdAt\": \"2026-11-07T23:53:43.604Z\",\n  \"updatedAt\": \"2026-11-07T23:53:43.604Z\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 4 · Listar libros con autores",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"id\": \"cmw727o3y000sutt4f5rkogh4\",\n    \"title\": \"Bestiario\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1951,\n    \"genre\": \"Cuento\",\n    \"pages\": 160,\n    \"authorId\": \"cmw727kus0002utt4udye6jze\",\n    \"createdAt\": \"2026-11-07T23:53:45.167Z\",\n    \"updatedAt\": \"2026-11-07T23:53:45.167Z\",\n    \"author\": {\n      \"id\": \"cmw727kus0002utt4udye6jze\",\n      \"name\": \"Julio Cortázar\",\n      \"email\": \"julio@example.com\",\n      \"bio\": \"Autor de cuentos y novelas de literatura fantástica\",\n      \"nationality\": \"Argentina\",\n      \"birthYear\": 1914,\n      \"createdAt\": \"2026-11-07T23:53:40.948Z\",\n      \"updatedAt\": \"2026-11-07T23:53:40.948Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727o0u000qutt4mm3464wo\",\n    \"title\": \"Final del juego\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1956,\n    \"genre\": \"Cuento\",\n    \"pages\": 200,\n    \"authorId\": \"cmw727kus0002utt4udye6jze\",\n    \"createdAt\": \"2026-11-07T23:53:45.054Z\",\n    \"updatedAt\": \"2026-11-07T23:53:45.054Z\",\n    \"author\": {\n      \"id\": \"cmw727kus0002utt4udye6jze\",\n      \"name\": \"Julio Cortázar\",\n      \"email\": \"julio@example.com\",\n      \"bio\": \"Autor de cuentos y novelas de literatura fantástica\",\n      \"nationality\": \"Argentina\",\n      \"birthYear\": 1914,\n      \"createdAt\": \"2026-11-07T23:53:40.948Z\",\n      \"updatedAt\": \"2026-11-07T23:53:40.948Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727nxm000outt4cju7v2a8\",\n    \"title\": \"Rayuela\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1963,\n    \"genre\": \"Novela\",\n    \"pages\": 600,\n    \"authorId\": \"cmw727kus0002utt4udye6jze\",\n    \"createdAt\": \"2026-11-07T23:53:44.938Z\",\n    \"updatedAt\": \"2026-11-07T23:53:44.938Z\",\n    \"author\": {\n      \"id\": \"cmw727kus0002utt4udye6jze\",\n      \"name\": \"Julio Cortázar\",\n      \"email\": \"julio@example.com\",\n      \"bio\": \"Autor de cuentos y novelas de literatura fantástica\",\n      \"nationality\": \"Argentina\",\n      \"birthYear\": 1914,\n      \"createdAt\": \"2026-11-07T23:53:40.948Z\",\n      \"updatedAt\": \"2026-11-07T23:53:40.948Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727nua000mutt4csu8kte9\",\n    \"title\": \"Paula\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1994,\n    \"genre\": \"Memorias\",\n    \"pages\": 368,\n    \"authorId\": \"cmw727krj0001utt4blmvw03y\",\n    \"createdAt\": \"2026-11-07T23:53:44.818Z\",\n    \"updatedAt\": \"2026-11-07T23:53:44.818Z\",\n    \"author\": {\n      \"id\": \"cmw727krj0001utt4blmvw03y\",\n      \"name\": \"Isabel Allende\",\n      \"email\": \"isabel@example.com\",\n      \"bio\": \"Narradora de historias familiares y memoria latinoamericana\",\n      \"nationality\": \"Chile\",\n      \"birthYear\": 1942,\n      \"createdAt\": \"2026-11-07T23:53:40.832Z\",\n      \"updatedAt\": \"2026-11-07T23:53:40.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727nr4000kutt4u9f2py09\",\n    \"title\": \"De amor y de sombra\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1984,\n    \"genre\": \"Novela\",\n    \"pages\": 304,\n    \"authorId\": \"cmw727krj0001utt4blmvw03y\",\n    \"createdAt\": \"2026-11-07T23:53:44.705Z\",\n    \"updatedAt\": \"2026-11-07T23:53:44.705Z\",\n    \"author\": {\n      \"id\": \"cmw727krj0001utt4blmvw03y\",\n      \"name\": \"Isabel Allende\",\n      \"email\": \"isabel@example.com\",\n      \"bio\": \"Narradora de historias familiares y memoria latinoamericana\",\n      \"nationality\": \"Chile\",\n      \"birthYear\": 1942,\n      \"createdAt\": \"2026-11-07T23:53:40.832Z\",\n      \"updatedAt\": \"2026-11-07T23:53:40.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727nns000iutt4aozfo3vf\",\n    \"title\": \"La casa de los espíritus\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1982,\n    \"genre\": \"Novela\",\n    \"pages\": 448,\n    \"authorId\": \"cmw727krj0001utt4blmvw03y\",\n    \"createdAt\": \"2026-11-07T23:53:44.585Z\",\n    \"updatedAt\": \"2026-11-07T23:53:44.585Z\",\n    \"author\": {\n      \"id\": \"cmw727krj0001utt4blmvw03y\",\n      \"name\": \"Isabel Allende\",\n      \"email\": \"isabel@example.com\",\n      \"bio\": \"Narradora de historias familiares y memoria latinoamericana\",\n      \"nationality\": \"Chile\",\n      \"birthYear\": 1942,\n      \"createdAt\": \"2026-11-07T23:53:40.832Z\",\n      \"updatedAt\": \"2026-11-07T23:53:40.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727nkk000gutt4qibc7ozf\",\n    \"title\": \"Memoria de mis putas tristes\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 2004,\n    \"genre\": \"Novela\",\n    \"pages\": 109,\n    \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n    \"createdAt\": \"2026-11-07T23:53:44.468Z\",\n    \"updatedAt\": \"2026-11-07T23:53:44.468Z\",\n    \"author\": {\n      \"id\": \"cmw727kln0000utt4pi4jstt5\",\n      \"name\": \"Gabriel García Márquez\",\n      \"email\": \"gabo@example.com\",\n      \"bio\": \"Autor de Cien años de soledad\",\n      \"nationality\": \"Colombia\",\n      \"birthYear\": 1927,\n      \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n      \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727nhc000eutt4k1qrzh01\",\n    \"title\": \"Doce cuentos peregrinos\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1992,\n    \"genre\": \"Cuento\",\n    \"pages\": 232,\n    \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n    \"createdAt\": \"2026-11-07T23:53:44.353Z\",\n    \"updatedAt\": \"2026-11-07T23:53:44.353Z\",\n    \"author\": {\n      \"id\": \"cmw727kln0000utt4pi4jstt5\",\n      \"name\": \"Gabriel García Márquez\",\n      \"email\": \"gabo@example.com\",\n      \"bio\": \"Autor de Cien años de soledad\",\n      \"nationality\": \"Colombia\",\n      \"birthYear\": 1927,\n      \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n      \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727ndz000cutt4s7g1nmqp\",\n    \"title\": \"Relato de un náufrago\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1970,\n    \"genre\": \"Periodismo\",\n    \"pages\": 110,\n    \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n    \"createdAt\": \"2026-11-07T23:53:44.231Z\",\n    \"updatedAt\": \"2026-11-07T23:53:44.231Z\",\n    \"author\": {\n      \"id\": \"cmw727kln0000utt4pi4jstt5\",\n      \"name\": \"Gabriel García Márquez\",\n      \"email\": \"gabo@example.com\",\n      \"bio\": \"Autor de Cien años de soledad\",\n      \"nationality\": \"Colombia\",\n      \"birthYear\": 1927,\n      \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n      \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727nam000autt4e590zcyy\",\n    \"title\": \"Crónica de una muerte anunciada\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1981,\n    \"genre\": \"Novela\",\n    \"pages\": 122,\n    \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n    \"createdAt\": \"2026-11-07T23:53:44.110Z\",\n    \"updatedAt\": \"2026-11-07T23:53:44.110Z\",\n    \"author\": {\n      \"id\": \"cmw727kln0000utt4pi4jstt5\",\n      \"name\": \"Gabriel García Márquez\",\n      \"email\": \"gabo@example.com\",\n      \"bio\": \"Autor de Cien años de soledad\",\n      \"nationality\": \"Colombia\",\n      \"birthYear\": 1927,\n      \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n      \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727n5g0008utt4t7bqv67n\",\n    \"title\": \"La hojarasca\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1955,\n    \"genre\": \"Novela\",\n    \"pages\": 128,\n    \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n    \"createdAt\": \"2026-11-07T23:53:43.924Z\",\n    \"updatedAt\": \"2026-11-07T23:53:43.924Z\",\n    \"author\": {\n      \"id\": \"cmw727kln0000utt4pi4jstt5\",\n      \"name\": \"Gabriel García Márquez\",\n      \"email\": \"gabo@example.com\",\n      \"bio\": \"Autor de Cien años de soledad\",\n      \"nationality\": \"Colombia\",\n      \"birthYear\": 1927,\n      \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n      \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727n250006utt42lanzf11\",\n    \"title\": \"El amor en los tiempos del cólera\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1985,\n    \"genre\": \"Novela\",\n    \"pages\": 348,\n    \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n    \"createdAt\": \"2026-11-07T23:53:43.805Z\",\n    \"updatedAt\": \"2026-11-07T23:53:43.805Z\",\n    \"author\": {\n      \"id\": \"cmw727kln0000utt4pi4jstt5\",\n      \"name\": \"Gabriel García Márquez\",\n      \"email\": \"gabo@example.com\",\n      \"bio\": \"Autor de Cien años de soledad\",\n      \"nationality\": \"Colombia\",\n      \"birthYear\": 1927,\n      \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n      \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727mwk0004utt4yzj78mmz\",\n    \"title\": \"Cien años de soledad\",\n    \"description\": \"Obra maestra del realismo mágico\",\n    \"isbn\": \"978-0307474728\",\n    \"publishedYear\": 1967,\n    \"genre\": \"Novela\",\n    \"pages\": 417,\n    \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n    \"createdAt\": \"2026-11-07T23:53:43.604Z\",\n    \"updatedAt\": \"2026-11-07T23:53:43.604Z\",\n    \"author\": {\n      \"id\": \"cmw727kln0000utt4pi4jstt5\",\n      \"name\": \"Gabriel García Márquez\",\n      \"email\": \"gabo@example.com\",\n      \"bio\": \"Autor de Cien años de soledad\",\n      \"nationality\": \"Colombia\",\n      \"birthYear\": 1927,\n      \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n      \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n    }\n  }\n]",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 3 · Libros de un autor",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/authors/cmw727kln0000utt4pi4jstt5/books"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/authors/cmw727kln0000utt4pi4jstt5/books"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"author\": {\n    \"id\": \"cmw727kln0000utt4pi4jstt5\",\n    \"name\": \"Gabriel García Márquez\"\n  },\n  \"totalBooks\": 7,\n  \"books\": [\n    {\n      \"id\": \"cmw727mwk0004utt4yzj78mmz\",\n      \"title\": \"Cien años de soledad\",\n      \"description\": \"Obra maestra del realismo mágico\",\n      \"isbn\": \"978-0307474728\",\n      \"publishedYear\": 1967,\n      \"genre\": \"Novela\",\n      \"pages\": 417,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:43.604Z\",\n      \"updatedAt\": \"2026-11-07T23:53:43.604Z\"\n    },\n    {\n      \"id\": \"cmw727n250006utt42lanzf11\",\n      \"title\": \"El amor en los tiempos del cólera\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1985,\n      \"genre\": \"Novela\",\n      \"pages\": 348,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:43.805Z\",\n      \"updatedAt\": \"2026-11-07T23:53:43.805Z\"\n    },\n    {\n      \"id\": \"cmw727n5g0008utt4t7bqv67n\",\n      \"title\": \"La hojarasca\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1955,\n      \"genre\": \"Novela\",\n      \"pages\": 128,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:43.924Z\",\n      \"updatedAt\": \"2026-11-07T23:53:43.924Z\"\n    },\n    {\n      \"id\": \"cmw727nam000autt4e590zcyy\",\n      \"title\": \"Crónica de una muerte anunciada\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1981,\n      \"genre\": \"Novela\",\n      \"pages\": 122,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.110Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.110Z\"\n    },\n    {\n      \"id\": \"cmw727ndz000cutt4s7g1nmqp\",\n      \"title\": \"Relato de un náufrago\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1970,\n      \"genre\": \"Periodismo\",\n      \"pages\": 110,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.231Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.231Z\"\n    },\n    {\n      \"id\": \"cmw727nhc000eutt4k1qrzh01\",\n      \"title\": \"Doce cuentos peregrinos\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1992,\n      \"genre\": \"Cuento\",\n      \"pages\": 232,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.353Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.353Z\"\n    },\n    {\n      \"id\": \"cmw727nkk000gutt4qibc7ozf\",\n      \"title\": \"Memoria de mis putas tristes\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 2004,\n      \"genre\": \"Novela\",\n      \"pages\": 109,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.468Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.468Z\"\n    }\n  ]\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 4 · Filtrar género",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books?genre=Novela"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books?genre=Novela"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"id\": \"cmw727nxm000outt4cju7v2a8\",\n    \"title\": \"Rayuela\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1963,\n    \"genre\": \"Novela\",\n    \"pages\": 600,\n    \"authorId\": \"cmw727kus0002utt4udye6jze\",\n    \"createdAt\": \"2026-11-07T23:53:44.938Z\",\n    \"updatedAt\": \"2026-11-07T23:53:44.938Z\",\n    \"author\": {\n      \"id\": \"cmw727kus0002utt4udye6jze\",\n      \"name\": \"Julio Cortázar\",\n      \"email\": \"julio@example.com\",\n      \"bio\": \"Autor de cuentos y novelas de literatura fantástica\",\n      \"nationality\": \"Argentina\",\n      \"birthYear\": 1914,\n      \"createdAt\": \"2026-11-07T23:53:40.948Z\",\n      \"updatedAt\": \"2026-11-07T23:53:40.948Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727nr4000kutt4u9f2py09\",\n    \"title\": \"De amor y de sombra\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1984,\n    \"genre\": \"Novela\",\n    \"pages\": 304,\n    \"authorId\": \"cmw727krj0001utt4blmvw03y\",\n    \"createdAt\": \"2026-11-07T23:53:44.705Z\",\n    \"updatedAt\": \"2026-11-07T23:53:44.705Z\",\n    \"author\": {\n      \"id\": \"cmw727krj0001utt4blmvw03y\",\n      \"name\": \"Isabel Allende\",\n      \"email\": \"isabel@example.com\",\n      \"bio\": \"Narradora de historias familiares y memoria latinoamericana\",\n      \"nationality\": \"Chile\",\n      \"birthYear\": 1942,\n      \"createdAt\": \"2026-11-07T23:53:40.832Z\",\n      \"updatedAt\": \"2026-11-07T23:53:40.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727nns000iutt4aozfo3vf\",\n    \"title\": \"La casa de los espíritus\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1982,\n    \"genre\": \"Novela\",\n    \"pages\": 448,\n    \"authorId\": \"cmw727krj0001utt4blmvw03y\",\n    \"createdAt\": \"2026-11-07T23:53:44.585Z\",\n    \"updatedAt\": \"2026-11-07T23:53:44.585Z\",\n    \"author\": {\n      \"id\": \"cmw727krj0001utt4blmvw03y\",\n      \"name\": \"Isabel Allende\",\n      \"email\": \"isabel@example.com\",\n      \"bio\": \"Narradora de historias familiares y memoria latinoamericana\",\n      \"nationality\": \"Chile\",\n      \"birthYear\": 1942,\n      \"createdAt\": \"2026-11-07T23:53:40.832Z\",\n      \"updatedAt\": \"2026-11-07T23:53:40.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727nkk000gutt4qibc7ozf\",\n    \"title\": \"Memoria de mis putas tristes\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 2004,\n    \"genre\": \"Novela\",\n    \"pages\": 109,\n    \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n    \"createdAt\": \"2026-11-07T23:53:44.468Z\",\n    \"updatedAt\": \"2026-11-07T23:53:44.468Z\",\n    \"author\": {\n      \"id\": \"cmw727kln0000utt4pi4jstt5\",\n      \"name\": \"Gabriel García Márquez\",\n      \"email\": \"gabo@example.com\",\n      \"bio\": \"Autor de Cien años de soledad\",\n      \"nationality\": \"Colombia\",\n      \"birthYear\": 1927,\n      \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n      \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727nam000autt4e590zcyy\",\n    \"title\": \"Crónica de una muerte anunciada\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1981,\n    \"genre\": \"Novela\",\n    \"pages\": 122,\n    \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n    \"createdAt\": \"2026-11-07T23:53:44.110Z\",\n    \"updatedAt\": \"2026-11-07T23:53:44.110Z\",\n    \"author\": {\n      \"id\": \"cmw727kln0000utt4pi4jstt5\",\n      \"name\": \"Gabriel García Márquez\",\n      \"email\": \"gabo@example.com\",\n      \"bio\": \"Autor de Cien años de soledad\",\n      \"nationality\": \"Colombia\",\n      \"birthYear\": 1927,\n      \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n      \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727n5g0008utt4t7bqv67n\",\n    \"title\": \"La hojarasca\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1955,\n    \"genre\": \"Novela\",\n    \"pages\": 128,\n    \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n    \"createdAt\": \"2026-11-07T23:53:43.924Z\",\n    \"updatedAt\": \"2026-11-07T23:53:43.924Z\",\n    \"author\": {\n      \"id\": \"cmw727kln0000utt4pi4jstt5\",\n      \"name\": \"Gabriel García Márquez\",\n      \"email\": \"gabo@example.com\",\n      \"bio\": \"Autor de Cien años de soledad\",\n      \"nationality\": \"Colombia\",\n      \"birthYear\": 1927,\n      \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n      \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727n250006utt42lanzf11\",\n    \"title\": \"El amor en los tiempos del cólera\",\n    \"description\": \"Ejemplar del catálogo de práctica\",\n    \"isbn\": null,\n    \"publishedYear\": 1985,\n    \"genre\": \"Novela\",\n    \"pages\": 348,\n    \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n    \"createdAt\": \"2026-11-07T23:53:43.805Z\",\n    \"updatedAt\": \"2026-11-07T23:53:43.805Z\",\n    \"author\": {\n      \"id\": \"cmw727kln0000utt4pi4jstt5\",\n      \"name\": \"Gabriel García Márquez\",\n      \"email\": \"gabo@example.com\",\n      \"bio\": \"Autor de Cien años de soledad\",\n      \"nationality\": \"Colombia\",\n      \"birthYear\": 1927,\n      \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n      \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n    }\n  },\n  {\n    \"id\": \"cmw727mwk0004utt4yzj78mmz\",\n    \"title\": \"Cien años de soledad\",\n    \"description\": \"Obra maestra del realismo mágico\",\n    \"isbn\": \"978-0307474728\",\n    \"publishedYear\": 1967,\n    \"genre\": \"Novela\",\n    \"pages\": 417,\n    \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n    \"createdAt\": \"2026-11-07T23:53:43.604Z\",\n    \"updatedAt\": \"2026-11-07T23:53:43.604Z\",\n    \"author\": {\n      \"id\": \"cmw727kln0000utt4pi4jstt5\",\n      \"name\": \"Gabriel García Márquez\",\n      \"email\": \"gabo@example.com\",\n      \"bio\": \"Autor de Cien años de soledad\",\n      \"nationality\": \"Colombia\",\n      \"birthYear\": 1927,\n      \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n      \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n    }\n  }\n]",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 5 · Libro por ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books/cmw727mwk0004utt4yzj78mmz"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books/cmw727mwk0004utt4yzj78mmz"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"cmw727mwk0004utt4yzj78mmz\",\n  \"title\": \"Cien años de soledad\",\n  \"description\": \"Obra maestra del realismo mágico\",\n  \"isbn\": \"978-0307474728\",\n  \"publishedYear\": 1967,\n  \"genre\": \"Novela\",\n  \"pages\": 417,\n  \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n  \"createdAt\": \"2026-11-07T23:53:43.604Z\",\n  \"updatedAt\": \"2026-11-07T23:53:43.604Z\",\n  \"author\": {\n    \"id\": \"cmw727kln0000utt4pi4jstt5\",\n    \"name\": \"Gabriel García Márquez\",\n    \"email\": \"gabo@example.com\",\n    \"bio\": \"Autor de Cien años de soledad\",\n    \"nationality\": \"Colombia\",\n    \"birthYear\": 1927,\n    \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n    \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n  }\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 5 · Actualizar libro",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books/cmw727mwk0004utt4yzj78mmz",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"description\": \"Obra maestra del realismo mágico\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books/cmw727mwk0004utt4yzj78mmz",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"Obra maestra del realismo mágico\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"cmw727mwk0004utt4yzj78mmz\",\n  \"title\": \"Cien años de soledad\",\n  \"description\": \"Obra maestra del realismo mágico\",\n  \"isbn\": \"978-0307474728\",\n  \"publishedYear\": 1967,\n  \"genre\": \"Novela\",\n  \"pages\": 417,\n  \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n  \"createdAt\": \"2026-11-07T23:53:43.604Z\",\n  \"updatedAt\": \"2026-11-07T23:53:49.578Z\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 5 · Crear libro de prueba",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Ejemplar temporal de prueba\",\n  \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n  \"pages\": 100\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "201 resultado real",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Ejemplar temporal de prueba\",\n  \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n  \"pages\": 100\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"cmw727rnz000uutt4yebxwgsy\",\n  \"title\": \"Ejemplar temporal de prueba\",\n  \"description\": null,\n  \"isbn\": null,\n  \"publishedYear\": null,\n  \"genre\": null,\n  \"pages\": 100,\n  \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n  \"createdAt\": \"2026-11-07T23:53:49.775Z\",\n  \"updatedAt\": \"2026-11-07T23:53:49.775Z\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 5 · Eliminar libro",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books/cmw727rnz000uutt4yebxwgsy"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books/cmw727rnz000uutt4yebxwgsy"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"Registro eliminado correctamente\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 5 · Verificar eliminación",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books/cmw727rnz000uutt4yebxwgsy"
+      },
+      "response": [
+        {
+          "name": "404 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books/cmw727rnz000uutt4yebxwgsy"
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": \"Registro no encontrado\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 2 · Crear autor temporal",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/authors",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Autor temporal\",\n  \"email\": \"temporal-1794095630254@example.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "201 resultado real",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/authors",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Autor temporal\",\n  \"email\": \"temporal-1794095630254@example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"cmw727s1z000vutt40idhciwy\",\n  \"name\": \"Autor temporal\",\n  \"email\": \"temporal-1794095630254@example.com\",\n  \"bio\": null,\n  \"nationality\": null,\n  \"birthYear\": null,\n  \"createdAt\": \"2026-11-07T23:53:50.280Z\",\n  \"updatedAt\": \"2026-11-07T23:53:50.280Z\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Tarea · Autor sin libros",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/authors/cmw727s1z000vutt40idhciwy/stats"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/authors/cmw727s1z000vutt40idhciwy/stats"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"authorId\": \"cmw727s1z000vutt40idhciwy\",\n  \"authorName\": \"Autor temporal\",\n  \"totalBooks\": 0,\n  \"firstBook\": null,\n  \"latestBook\": null,\n  \"averagePages\": null,\n  \"genres\": [],\n  \"longestBook\": null,\n  \"shortestBook\": null\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Ejercicio 2 · Eliminar autor",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/authors/cmw727s1z000vutt40idhciwy"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/authors/cmw727s1z000vutt40idhciwy"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"Registro eliminado correctamente\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Tarea · Búsqueda combinada",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books/search?search=AMOR&genre=Novela&page=1&limit=10&sortBy=publishedYear&order=desc"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books/search?search=AMOR&genre=Novela&page=1&limit=10&sortBy=publishedYear&order=desc"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": [\n    {\n      \"id\": \"cmw727n250006utt42lanzf11\",\n      \"title\": \"El amor en los tiempos del cólera\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1985,\n      \"genre\": \"Novela\",\n      \"pages\": 348,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:43.805Z\",\n      \"updatedAt\": \"2026-11-07T23:53:43.805Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nr4000kutt4u9f2py09\",\n      \"title\": \"De amor y de sombra\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1984,\n      \"genre\": \"Novela\",\n      \"pages\": 304,\n      \"authorId\": \"cmw727krj0001utt4blmvw03y\",\n      \"createdAt\": \"2026-11-07T23:53:44.705Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.705Z\",\n      \"author\": {\n        \"id\": \"cmw727krj0001utt4blmvw03y\",\n        \"name\": \"Isabel Allende\",\n        \"email\": \"isabel@example.com\",\n        \"bio\": \"Narradora de historias familiares y memoria latinoamericana\",\n        \"nationality\": \"Chile\",\n        \"birthYear\": 1942,\n        \"createdAt\": \"2026-11-07T23:53:40.832Z\",\n        \"updatedAt\": \"2026-11-07T23:53:40.832Z\"\n      }\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"limit\": 10,\n    \"total\": 2,\n    \"totalPages\": 1,\n    \"hasNext\": false,\n    \"hasPrev\": false\n  }\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Tarea · Búsqueda por autor",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books/search?authorName=GARCÍA&page=1&limit=3&sortBy=title&order=asc"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books/search?authorName=GARCÍA&page=1&limit=3&sortBy=title&order=asc"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": [\n    {\n      \"id\": \"cmw727mwk0004utt4yzj78mmz\",\n      \"title\": \"Cien años de soledad\",\n      \"description\": \"Obra maestra del realismo mágico\",\n      \"isbn\": \"978-0307474728\",\n      \"publishedYear\": 1967,\n      \"genre\": \"Novela\",\n      \"pages\": 417,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:43.604Z\",\n      \"updatedAt\": \"2026-11-07T23:53:49.578Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nam000autt4e590zcyy\",\n      \"title\": \"Crónica de una muerte anunciada\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1981,\n      \"genre\": \"Novela\",\n      \"pages\": 122,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.110Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.110Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nhc000eutt4k1qrzh01\",\n      \"title\": \"Doce cuentos peregrinos\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1992,\n      \"genre\": \"Cuento\",\n      \"pages\": 232,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.353Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.353Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"limit\": 3,\n    \"total\": 7,\n    \"totalPages\": 3,\n    \"hasNext\": true,\n    \"hasPrev\": false\n  }\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Tarea · Paginación segunda página",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books/search?page=2&limit=3&sortBy=title&order=asc"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books/search?page=2&limit=3&sortBy=title&order=asc"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": [\n    {\n      \"id\": \"cmw727nr4000kutt4u9f2py09\",\n      \"title\": \"De amor y de sombra\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1984,\n      \"genre\": \"Novela\",\n      \"pages\": 304,\n      \"authorId\": \"cmw727krj0001utt4blmvw03y\",\n      \"createdAt\": \"2026-11-07T23:53:44.705Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.705Z\",\n      \"author\": {\n        \"id\": \"cmw727krj0001utt4blmvw03y\",\n        \"name\": \"Isabel Allende\",\n        \"email\": \"isabel@example.com\",\n        \"bio\": \"Narradora de historias familiares y memoria latinoamericana\",\n        \"nationality\": \"Chile\",\n        \"birthYear\": 1942,\n        \"createdAt\": \"2026-11-07T23:53:40.832Z\",\n        \"updatedAt\": \"2026-11-07T23:53:40.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nhc000eutt4k1qrzh01\",\n      \"title\": \"Doce cuentos peregrinos\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1992,\n      \"genre\": \"Cuento\",\n      \"pages\": 232,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.353Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.353Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727n250006utt42lanzf11\",\n      \"title\": \"El amor en los tiempos del cólera\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1985,\n      \"genre\": \"Novela\",\n      \"pages\": 348,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:43.805Z\",\n      \"updatedAt\": \"2026-11-07T23:53:43.805Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    }\n  ],\n  \"pagination\": {\n    \"page\": 2,\n    \"limit\": 3,\n    \"total\": 13,\n    \"totalPages\": 5,\n    \"hasNext\": true,\n    \"hasPrev\": true\n  }\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Tarea · Parámetros por defecto",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books/search"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books/search"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": [\n    {\n      \"id\": \"cmw727o3y000sutt4f5rkogh4\",\n      \"title\": \"Bestiario\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1951,\n      \"genre\": \"Cuento\",\n      \"pages\": 160,\n      \"authorId\": \"cmw727kus0002utt4udye6jze\",\n      \"createdAt\": \"2026-11-07T23:53:45.167Z\",\n      \"updatedAt\": \"2026-11-07T23:53:45.167Z\",\n      \"author\": {\n        \"id\": \"cmw727kus0002utt4udye6jze\",\n        \"name\": \"Julio Cortázar\",\n        \"email\": \"julio@example.com\",\n        \"bio\": \"Autor de cuentos y novelas de literatura fantástica\",\n        \"nationality\": \"Argentina\",\n        \"birthYear\": 1914,\n        \"createdAt\": \"2026-11-07T23:53:40.948Z\",\n        \"updatedAt\": \"2026-11-07T23:53:40.948Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727o0u000qutt4mm3464wo\",\n      \"title\": \"Final del juego\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1956,\n      \"genre\": \"Cuento\",\n      \"pages\": 200,\n      \"authorId\": \"cmw727kus0002utt4udye6jze\",\n      \"createdAt\": \"2026-11-07T23:53:45.054Z\",\n      \"updatedAt\": \"2026-11-07T23:53:45.054Z\",\n      \"author\": {\n        \"id\": \"cmw727kus0002utt4udye6jze\",\n        \"name\": \"Julio Cortázar\",\n        \"email\": \"julio@example.com\",\n        \"bio\": \"Autor de cuentos y novelas de literatura fantástica\",\n        \"nationality\": \"Argentina\",\n        \"birthYear\": 1914,\n        \"createdAt\": \"2026-11-07T23:53:40.948Z\",\n        \"updatedAt\": \"2026-11-07T23:53:40.948Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nxm000outt4cju7v2a8\",\n      \"title\": \"Rayuela\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1963,\n      \"genre\": \"Novela\",\n      \"pages\": 600,\n      \"authorId\": \"cmw727kus0002utt4udye6jze\",\n      \"createdAt\": \"2026-11-07T23:53:44.938Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.938Z\",\n      \"author\": {\n        \"id\": \"cmw727kus0002utt4udye6jze\",\n        \"name\": \"Julio Cortázar\",\n        \"email\": \"julio@example.com\",\n        \"bio\": \"Autor de cuentos y novelas de literatura fantástica\",\n        \"nationality\": \"Argentina\",\n        \"birthYear\": 1914,\n        \"createdAt\": \"2026-11-07T23:53:40.948Z\",\n        \"updatedAt\": \"2026-11-07T23:53:40.948Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nua000mutt4csu8kte9\",\n      \"title\": \"Paula\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1994,\n      \"genre\": \"Memorias\",\n      \"pages\": 368,\n      \"authorId\": \"cmw727krj0001utt4blmvw03y\",\n      \"createdAt\": \"2026-11-07T23:53:44.818Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.818Z\",\n      \"author\": {\n        \"id\": \"cmw727krj0001utt4blmvw03y\",\n        \"name\": \"Isabel Allende\",\n        \"email\": \"isabel@example.com\",\n        \"bio\": \"Narradora de historias familiares y memoria latinoamericana\",\n        \"nationality\": \"Chile\",\n        \"birthYear\": 1942,\n        \"createdAt\": \"2026-11-07T23:53:40.832Z\",\n        \"updatedAt\": \"2026-11-07T23:53:40.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nr4000kutt4u9f2py09\",\n      \"title\": \"De amor y de sombra\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1984,\n      \"genre\": \"Novela\",\n      \"pages\": 304,\n      \"authorId\": \"cmw727krj0001utt4blmvw03y\",\n      \"createdAt\": \"2026-11-07T23:53:44.705Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.705Z\",\n      \"author\": {\n        \"id\": \"cmw727krj0001utt4blmvw03y\",\n        \"name\": \"Isabel Allende\",\n        \"email\": \"isabel@example.com\",\n        \"bio\": \"Narradora de historias familiares y memoria latinoamericana\",\n        \"nationality\": \"Chile\",\n        \"birthYear\": 1942,\n        \"createdAt\": \"2026-11-07T23:53:40.832Z\",\n        \"updatedAt\": \"2026-11-07T23:53:40.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nns000iutt4aozfo3vf\",\n      \"title\": \"La casa de los espíritus\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1982,\n      \"genre\": \"Novela\",\n      \"pages\": 448,\n      \"authorId\": \"cmw727krj0001utt4blmvw03y\",\n      \"createdAt\": \"2026-11-07T23:53:44.585Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.585Z\",\n      \"author\": {\n        \"id\": \"cmw727krj0001utt4blmvw03y\",\n        \"name\": \"Isabel Allende\",\n        \"email\": \"isabel@example.com\",\n        \"bio\": \"Narradora de historias familiares y memoria latinoamericana\",\n        \"nationality\": \"Chile\",\n        \"birthYear\": 1942,\n        \"createdAt\": \"2026-11-07T23:53:40.832Z\",\n        \"updatedAt\": \"2026-11-07T23:53:40.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nkk000gutt4qibc7ozf\",\n      \"title\": \"Memoria de mis putas tristes\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 2004,\n      \"genre\": \"Novela\",\n      \"pages\": 109,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.468Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.468Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nhc000eutt4k1qrzh01\",\n      \"title\": \"Doce cuentos peregrinos\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1992,\n      \"genre\": \"Cuento\",\n      \"pages\": 232,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.353Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.353Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727ndz000cutt4s7g1nmqp\",\n      \"title\": \"Relato de un náufrago\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1970,\n      \"genre\": \"Periodismo\",\n      \"pages\": 110,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.231Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.231Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nam000autt4e590zcyy\",\n      \"title\": \"Crónica de una muerte anunciada\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1981,\n      \"genre\": \"Novela\",\n      \"pages\": 122,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.110Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.110Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"limit\": 10,\n    \"total\": 13,\n    \"totalPages\": 2,\n    \"hasNext\": true,\n    \"hasPrev\": false\n  }\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Tarea · Límite máximo",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books/search?limit=100"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books/search?limit=100"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": [\n    {\n      \"id\": \"cmw727o3y000sutt4f5rkogh4\",\n      \"title\": \"Bestiario\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1951,\n      \"genre\": \"Cuento\",\n      \"pages\": 160,\n      \"authorId\": \"cmw727kus0002utt4udye6jze\",\n      \"createdAt\": \"2026-11-07T23:53:45.167Z\",\n      \"updatedAt\": \"2026-11-07T23:53:45.167Z\",\n      \"author\": {\n        \"id\": \"cmw727kus0002utt4udye6jze\",\n        \"name\": \"Julio Cortázar\",\n        \"email\": \"julio@example.com\",\n        \"bio\": \"Autor de cuentos y novelas de literatura fantástica\",\n        \"nationality\": \"Argentina\",\n        \"birthYear\": 1914,\n        \"createdAt\": \"2026-11-07T23:53:40.948Z\",\n        \"updatedAt\": \"2026-11-07T23:53:40.948Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727o0u000qutt4mm3464wo\",\n      \"title\": \"Final del juego\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1956,\n      \"genre\": \"Cuento\",\n      \"pages\": 200,\n      \"authorId\": \"cmw727kus0002utt4udye6jze\",\n      \"createdAt\": \"2026-11-07T23:53:45.054Z\",\n      \"updatedAt\": \"2026-11-07T23:53:45.054Z\",\n      \"author\": {\n        \"id\": \"cmw727kus0002utt4udye6jze\",\n        \"name\": \"Julio Cortázar\",\n        \"email\": \"julio@example.com\",\n        \"bio\": \"Autor de cuentos y novelas de literatura fantástica\",\n        \"nationality\": \"Argentina\",\n        \"birthYear\": 1914,\n        \"createdAt\": \"2026-11-07T23:53:40.948Z\",\n        \"updatedAt\": \"2026-11-07T23:53:40.948Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nxm000outt4cju7v2a8\",\n      \"title\": \"Rayuela\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1963,\n      \"genre\": \"Novela\",\n      \"pages\": 600,\n      \"authorId\": \"cmw727kus0002utt4udye6jze\",\n      \"createdAt\": \"2026-11-07T23:53:44.938Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.938Z\",\n      \"author\": {\n        \"id\": \"cmw727kus0002utt4udye6jze\",\n        \"name\": \"Julio Cortázar\",\n        \"email\": \"julio@example.com\",\n        \"bio\": \"Autor de cuentos y novelas de literatura fantástica\",\n        \"nationality\": \"Argentina\",\n        \"birthYear\": 1914,\n        \"createdAt\": \"2026-11-07T23:53:40.948Z\",\n        \"updatedAt\": \"2026-11-07T23:53:40.948Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nua000mutt4csu8kte9\",\n      \"title\": \"Paula\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1994,\n      \"genre\": \"Memorias\",\n      \"pages\": 368,\n      \"authorId\": \"cmw727krj0001utt4blmvw03y\",\n      \"createdAt\": \"2026-11-07T23:53:44.818Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.818Z\",\n      \"author\": {\n        \"id\": \"cmw727krj0001utt4blmvw03y\",\n        \"name\": \"Isabel Allende\",\n        \"email\": \"isabel@example.com\",\n        \"bio\": \"Narradora de historias familiares y memoria latinoamericana\",\n        \"nationality\": \"Chile\",\n        \"birthYear\": 1942,\n        \"createdAt\": \"2026-11-07T23:53:40.832Z\",\n        \"updatedAt\": \"2026-11-07T23:53:40.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nr4000kutt4u9f2py09\",\n      \"title\": \"De amor y de sombra\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1984,\n      \"genre\": \"Novela\",\n      \"pages\": 304,\n      \"authorId\": \"cmw727krj0001utt4blmvw03y\",\n      \"createdAt\": \"2026-11-07T23:53:44.705Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.705Z\",\n      \"author\": {\n        \"id\": \"cmw727krj0001utt4blmvw03y\",\n        \"name\": \"Isabel Allende\",\n        \"email\": \"isabel@example.com\",\n        \"bio\": \"Narradora de historias familiares y memoria latinoamericana\",\n        \"nationality\": \"Chile\",\n        \"birthYear\": 1942,\n        \"createdAt\": \"2026-11-07T23:53:40.832Z\",\n        \"updatedAt\": \"2026-11-07T23:53:40.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nns000iutt4aozfo3vf\",\n      \"title\": \"La casa de los espíritus\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1982,\n      \"genre\": \"Novela\",\n      \"pages\": 448,\n      \"authorId\": \"cmw727krj0001utt4blmvw03y\",\n      \"createdAt\": \"2026-11-07T23:53:44.585Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.585Z\",\n      \"author\": {\n        \"id\": \"cmw727krj0001utt4blmvw03y\",\n        \"name\": \"Isabel Allende\",\n        \"email\": \"isabel@example.com\",\n        \"bio\": \"Narradora de historias familiares y memoria latinoamericana\",\n        \"nationality\": \"Chile\",\n        \"birthYear\": 1942,\n        \"createdAt\": \"2026-11-07T23:53:40.832Z\",\n        \"updatedAt\": \"2026-11-07T23:53:40.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nkk000gutt4qibc7ozf\",\n      \"title\": \"Memoria de mis putas tristes\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 2004,\n      \"genre\": \"Novela\",\n      \"pages\": 109,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.468Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.468Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nhc000eutt4k1qrzh01\",\n      \"title\": \"Doce cuentos peregrinos\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1992,\n      \"genre\": \"Cuento\",\n      \"pages\": 232,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.353Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.353Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727ndz000cutt4s7g1nmqp\",\n      \"title\": \"Relato de un náufrago\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1970,\n      \"genre\": \"Periodismo\",\n      \"pages\": 110,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.231Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.231Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727nam000autt4e590zcyy\",\n      \"title\": \"Crónica de una muerte anunciada\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1981,\n      \"genre\": \"Novela\",\n      \"pages\": 122,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:44.110Z\",\n      \"updatedAt\": \"2026-11-07T23:53:44.110Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727n5g0008utt4t7bqv67n\",\n      \"title\": \"La hojarasca\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1955,\n      \"genre\": \"Novela\",\n      \"pages\": 128,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:43.924Z\",\n      \"updatedAt\": \"2026-11-07T23:53:43.924Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727n250006utt42lanzf11\",\n      \"title\": \"El amor en los tiempos del cólera\",\n      \"description\": \"Ejemplar del catálogo de práctica\",\n      \"isbn\": null,\n      \"publishedYear\": 1985,\n      \"genre\": \"Novela\",\n      \"pages\": 348,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:43.805Z\",\n      \"updatedAt\": \"2026-11-07T23:53:43.805Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    },\n    {\n      \"id\": \"cmw727mwk0004utt4yzj78mmz\",\n      \"title\": \"Cien años de soledad\",\n      \"description\": \"Obra maestra del realismo mágico\",\n      \"isbn\": \"978-0307474728\",\n      \"publishedYear\": 1967,\n      \"genre\": \"Novela\",\n      \"pages\": 417,\n      \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n      \"createdAt\": \"2026-11-07T23:53:43.604Z\",\n      \"updatedAt\": \"2026-11-07T23:53:49.578Z\",\n      \"author\": {\n        \"id\": \"cmw727kln0000utt4pi4jstt5\",\n        \"name\": \"Gabriel García Márquez\",\n        \"email\": \"gabo@example.com\",\n        \"bio\": \"Autor de Cien años de soledad\",\n        \"nationality\": \"Colombia\",\n        \"birthYear\": 1927,\n        \"createdAt\": \"2026-11-07T23:53:40.619Z\",\n        \"updatedAt\": \"2026-11-07T23:53:42.832Z\"\n      }\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"limit\": 50,\n    \"total\": 13,\n    \"totalPages\": 1,\n    \"hasNext\": false,\n    \"hasPrev\": false\n  }\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Tarea · Página inválida",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books/search?page=0"
+      },
+      "response": [
+        {
+          "name": "400 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books/search?page=0"
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": \"Parámetros de paginación u orden inválidos\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Tarea · Estadísticas del autor",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/authors/cmw727kln0000utt4pi4jstt5/stats"
+      },
+      "response": [
+        {
+          "name": "200 resultado real",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/authors/cmw727kln0000utt4pi4jstt5/stats"
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"authorId\": \"cmw727kln0000utt4pi4jstt5\",\n  \"authorName\": \"Gabriel García Márquez\",\n  \"totalBooks\": 7,\n  \"firstBook\": {\n    \"title\": \"La hojarasca\",\n    \"year\": 1955\n  },\n  \"latestBook\": {\n    \"title\": \"Memoria de mis putas tristes\",\n    \"year\": 2004\n  },\n  \"averagePages\": 209.43,\n  \"genres\": [\n    \"Cuento\",\n    \"Novela\",\n    \"Periodismo\"\n  ],\n  \"longestBook\": {\n    \"title\": \"Cien años de soledad\",\n    \"pages\": 417\n  },\n  \"shortestBook\": {\n    \"title\": \"Memoria de mis putas tristes\",\n    \"pages\": 109\n  }\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Validación · Email duplicado",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/authors",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Gabriel García Márquez\",\n  \"email\": \"gabo@example.com\",\n  \"nationality\": \"Colombia\",\n  \"birthYear\": 1927,\n  \"bio\": \"Premio Nobel de Literatura 1982\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "409 resultado real",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/authors",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Gabriel García Márquez\",\n  \"email\": \"gabo@example.com\",\n  \"nationality\": \"Colombia\",\n  \"birthYear\": 1927,\n  \"bio\": \"Premio Nobel de Literatura 1982\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Conflict",
+          "code": 409,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": \"El correo o ISBN ya existe\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Validación · Datos inválidos",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://127.0.0.1:3000/api/books",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "400 resultado real",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "http://127.0.0.1:3000/api/books",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": \"Datos inválidos\",\n  \"details\": [\n    {\n      \"origin\": \"string\",\n      \"code\": \"too_small\",\n      \"minimum\": 1,\n      \"inclusive\": true,\n      \"path\": [\n        \"title\"\n      ],\n      \"message\": \"Too small: expected string to have >=1 characters\"\n    },\n    {\n      \"expected\": \"string\",\n      \"code\": \"invalid_type\",\n      \"path\": [\n        \"authorId\"\n      ],\n      \"message\": \"Invalid input: expected string, received undefined\"\n    }\n  ]\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    }
+  ]
+}
