@@ -51,71 +51,71 @@ export default async function ProjectDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <Link
-        href="/projects"
-        className="text-blue-600 hover:underline mb-6 inline-block"
-      >
-        ← Volver a Proyectos
-      </Link>
+    <div className="relative overflow-hidden">
+      <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-indigo-600/25 blur-3xl" />
+      <div className="container relative mx-auto max-w-5xl px-4 py-16">
+        <Link
+          href="/projects"
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 transition hover:text-white"
+        >
+          ← Volver a Proyectos
+        </Link>
 
-      <article>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          {project.title}
-        </h1>
+        <article>
+          <h1 className="text-4xl font-extrabold text-white md:text-5xl">{project.title}</h1>
+          <p className="mt-4 max-w-3xl text-lg text-slate-400">{project.description}</p>
 
-        <div className="relative w-full h-96 mb-8 rounded-lg overflow-hidden">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-          />
-        </div>
-
-        <p className="text-lg text-gray-700 mb-6">{project.description}</p>
-
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">
-            Tecnologías Utilizadas
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-              >
-                {tech}
-              </span>
-            ))}
+          <div className="relative mt-10 h-96 w-full overflow-hidden rounded-3xl ring-1 ring-white/15 md:h-[28rem]">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+            />
           </div>
-        </div>
 
-        <div className="flex gap-4">
-          {project.demoUrl && (
-            <a
-              href={project.demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
-            >
-              Ver Demo
-            </a>
-          )}
-          {project.githubUrl && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition"
-            >
-              Ver Código
-            </a>
-          )}
-        </div>
-      </article>
+          <div className="mt-10 grid gap-8 md:grid-cols-[1.5fr_1fr]">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+              <h2 className="mb-4 text-2xl font-bold text-white">Tecnologías Utilizadas</h2>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-indigo-400/30 bg-indigo-500/10 px-4 py-1.5 text-sm font-medium text-indigo-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-white/5 p-8">
+              <h2 className="text-2xl font-bold text-white">Enlaces</h2>
+              {project.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-2xl bg-gradient-to-r from-indigo-500 to-cyan-500 px-6 py-3 text-center font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:-translate-y-0.5"
+                >
+                  Ver Demo
+                </a>
+              )}
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-2xl border border-white/15 px-6 py-3 text-center font-semibold text-white transition hover:bg-white/10"
+                >
+                  Ver Código
+                </a>
+              )}
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   );
 }

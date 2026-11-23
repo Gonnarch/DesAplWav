@@ -74,9 +74,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={inter.variable}>
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col min-h-screen bg-slate-950 text-slate-100 antialiased">
         <Header />
-        <main className="grow bg-slate-50">{children}</main>
+        <main className="grow">{children}</main>
         <Footer />
       </body>
     </html>
